@@ -1,0 +1,14 @@
+{
+  "metadata": {
+    "title": "Faashinii",
+    "description": "Aplikeeshinii faashinii"
+  },
+  "home": {
+    "title": "Faashinii"
+  },
+  "common": {
+    "loading": "Fe'aa jira...",
+    "error": "Dogoggorri uumame",
+    "retry": "Irra deebi'ii yaali"
+  }
+}

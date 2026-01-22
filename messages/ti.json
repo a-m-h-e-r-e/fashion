@@ -1,0 +1,14 @@
+{
+  "metadata": {
+    "title": "ፋሽን",
+    "description": "ናይ ፋሽን ኣፕሊኬሽን"
+  },
+  "home": {
+    "title": "ፋሽን"
+  },
+  "common": {
+    "loading": "ይጽዕን ኣሎ...",
+    "error": "ጌጋ ተፈጢሩ",
+    "retry": "ደጊምካ ፈትን"
+  }
+}

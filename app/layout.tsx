@@ -1,14 +1,5 @@
-import "./globals.css"
-
-export const metadata = {
-  title: "Fashion",
-  description: "Fashion app",
-}
-
+// Root layout is not used with next-intl middleware
+// All routes go through app/[locale]/layout.tsx
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="en">
-      <body>{children}</body>
-    </html>
-  )
+  return children;
 }
