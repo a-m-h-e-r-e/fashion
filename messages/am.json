@@ -1,0 +1,14 @@
+{
+  "metadata": {
+    "title": "ፋሽን",
+    "description": "የፋሽን መተግበሪያ"
+  },
+  "home": {
+    "title": "ፋሽን"
+  },
+  "common": {
+    "loading": "በመጫን ላይ...",
+    "error": "ስህተት ተከስቷል",
+    "retry": "እንደገና ሞክር"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "metadata": {
+    "title": "Fashion",
+    "description": "Fashion app"
+  },
+  "home": {
+    "title": "Fashion"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "retry": "Try again"
+  }
+}

@@ -1,18 +1,5 @@
-import type { Metadata } from "next"
-import { Inter } from "next/font/google"
-import "./globals.css"
-
-const inter = Inter({ subsets: ["latin"] })
-
-export const metadata: Metadata = {
-  title: "Fashion",
-  description: "Fashion app",
-}
-
+// Root layout is not used with next-intl middleware
+// All routes go through app/[locale]/layout.tsx
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="en" className="dark">
-      <body className={inter.className}>{children}</body>
-    </html>
-  )
+  return children;
 }
