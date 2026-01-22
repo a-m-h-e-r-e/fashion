@@ -1,0 +1,14 @@
+{
+  "metadata": {
+    "title": "Faashinka",
+    "description": "Abka faashinka"
+  },
+  "home": {
+    "title": "Faashinka"
+  },
+  "common": {
+    "loading": "Waa la soo rarayaa...",
+    "error": "Khalad ayaa dhacay",
+    "retry": "Isku day mar kale"
+  }
+}
