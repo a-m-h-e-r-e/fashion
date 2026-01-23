@@ -18,6 +18,7 @@ export async function generateMetadata({
 }: {
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { locale } = await params;
   const messages = await getMessages();
   const metadata = messages.metadata as { title: string; description: string };

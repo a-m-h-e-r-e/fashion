@@ -4,7 +4,7 @@ import httpClient from "./http-client";
 
 export type IMethod = "get" | "post" | "put" | "delete" | "patch";
 
-type IArgs<T> = {
+type IArgs = {
     endpoint: string
     method: IMethod;
     httpClientConfiguration?: AxiosRequestConfig;
@@ -16,7 +16,7 @@ const queryFunction = <T, P = unknown>({
     method,
     params,
     httpClientConfiguration = undefined,
-  }: IArgs<T>) => {
+  }: IArgs) => {
     return async (args: P): Promise<T> => {
       const { id, queryKey, ...rest } = params ?? {};
   
