@@ -1,0 +1,66 @@
+export default [
+  {
+    blankLine : 'always',
+    next      : [
+      'return',
+      'do',
+      'export',
+      'for',
+      'function',
+      'throw',
+      'try',
+      'while',
+      'with',
+      'switch',
+      'case',
+      'default',
+    ],
+    prev : '*',
+  },
+  {
+    blankLine : 'always',
+    next      : '*',
+    prev      : [
+      'for',
+      'multiline-const',
+      'multiline-let',
+      'multiline-var',
+      'block',
+      'block-like',
+      'class',
+      'do',
+      'function',
+      'import',
+      'try',
+      'while',
+      'with',
+      'switch',
+
+    ],
+  },
+  {
+    blankLine : 'any',
+    next      : 'const',
+    prev      : 'const',
+  },
+  {
+    blankLine : 'any',
+    next      : 'let',
+    prev      : 'let',
+  },
+  {
+    blankLine : 'any',
+    next      : 'var',
+    prev      : 'var',
+  },
+  {
+    blankLine : 'never',
+    next      : 'export',
+    prev      : 'export',
+  },
+  {
+    blankLine : 'any',
+    next      : 'import',
+    prev      : 'import',
+  },
+]

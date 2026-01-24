@@ -1,5 +1,6 @@
 // Root layout is not used with next-intl middleware
 // All routes go through app/[locale]/layout.tsx
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return children;
+// eslint-disable-next-line require-await
+export default async function RootLayout( { children }: { children: React.ReactNode } ) {
+  return children
 }
