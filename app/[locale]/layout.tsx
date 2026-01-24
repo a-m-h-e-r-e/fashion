@@ -5,6 +5,7 @@ import { NextIntlClientProvider } from 'next-intl'
 import { getMessages, setRequestLocale } from 'next-intl/server'
 import { routing } from '@/i18n/routing'
 import { isRtlLocale, type Locale } from '@/i18n/config'
+import { MSWProvider } from '@/components/providers/msw-provider'
 import '../globals.css'
 
 /* eslint-disable new-cap */
@@ -46,9 +47,11 @@ export default async function LocaleLayout( {
   return (
     <html className='dark' dir={ dir } lang={ locale }>
       <body className={ inter.className }>
-        <NextIntlClientProvider messages={ messages }>
-          {children}
-        </NextIntlClientProvider>
+        <MSWProvider>
+          <NextIntlClientProvider messages={ messages }>
+            {children}
+          </NextIntlClientProvider>
+        </MSWProvider>
       </body>
     </html>
   )
