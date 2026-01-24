@@ -4,15 +4,17 @@ import { NextIntlClientProvider } from 'next-intl'
 import Page from './[locale]/page'
 import messages from '../messages/en.json'
 
-vi.mock('next-intl/server', () => ({
-  setRequestLocale: vi.fn(),
-}))
+vi.mock( 'next-intl/server', () => ( { setRequestLocale: vi.fn() } ) )
 
-test('Page', () => {
+test( 'Page', () => {
   render(
-    <NextIntlClientProvider locale="en" messages={messages}>
-      <Page params={{ locale: 'en' }} />
-    </NextIntlClientProvider>
+    <NextIntlClientProvider locale='en' messages={ messages }>
+      <Page params={ { locale: 'en' } } />
+    </NextIntlClientProvider>,
   )
-  expect(screen.getByRole('heading', { level: 1, name: 'Fashion' })).toBeDefined()
-})
+  expect( screen.getByRole( 'heading', {
+    level : 1,
+    name  : 'Fashion',
+  } ) )
+    .toBeDefined()
+} )
