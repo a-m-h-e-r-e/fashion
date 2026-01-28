@@ -18,7 +18,12 @@ export const MSWProvider = ( { children }: MSWProviderProps ): ReactNode => {
 
   useEffect( () => {
     const enableMocking = async () => {
-      if ( 'development' !== process.env.NODE_ENV ) {
+      // Enable MSW in both development and test environments.
+      // In other environments (production), skip initializing the worker.
+      if (
+        'development' !== process.env.NODE_ENV
+        && 'test' !== process.env.NODE_ENV
+      ) {
         setIsReady( true )
 
         return
@@ -37,9 +42,12 @@ export const MSWProvider = ( { children }: MSWProviderProps ): ReactNode => {
     enableMocking()
   }, [] )
 
-  // In development, wait for MSW to be ready
+  // In development or test, wait for MSW to be ready
   // In production, render immediately
-  if ( !isReady && 'development' === process.env.NODE_ENV ) {
+  if (
+    !isReady
+    && ( 'development' === process.env.NODE_ENV || 'test' === process.env.NODE_ENV )
+  ) {
     return null
   }
 

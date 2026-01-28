@@ -19,10 +19,27 @@ type IRestHandlers = {
   options?             : RequestHandlerOptions
 }
 
-const makeRestHandlers = ( handlers: Array<IRestHandlers> ) => handlers
-  .filter( ( { activeInDevelopment } ) => 'test' === process.env.NODE_ENV
-    || ( 'development' === process.env.NODE_ENV && ( activeInDevelopment ?? true ) ) )
-  .map( ( { endpoint, method, mockResponse, options } ) => http[method ?? 'get']( endpoint, mockResponse, options ) )
+/**
+ * Build REST handlers.
+ *
+ * Handlers are enabled when:
+ * - ENABLE_MSW=true is set explicitly, OR
+ * - NODE_ENV === 'test', OR
+ * - NODE_ENV === 'development' and the handler's `activeInDevelopment` flag is true (or unspecified).
+ */
+const makeRestHandlers = ( handlers: Array<IRestHandlers> ) => {
+  const enableMswValue = process.env.ENABLE_MSW ?? ''
+  const enableMswExplicit = 'true' === String( enableMswValue )
+    .toLowerCase()
+  const isTest = 'test' === process.env.NODE_ENV
+  const isDev = 'development' === process.env.NODE_ENV
+
+  return handlers
+    .filter(
+      ( { activeInDevelopment } ) => enableMswExplicit || isTest || ( isDev && ( activeInDevelopment ?? true ) ),
+    )
+    .map( ( { endpoint, method, mockResponse, options } ) => http[method ?? 'get']( endpoint, mockResponse, options ) )
+}
 
 export type { IRestHandlers }
 export default makeRestHandlers
