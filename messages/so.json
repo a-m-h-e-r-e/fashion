@@ -1,14 +1,131 @@
 {
   "metadata": {
-    "title": "Faashinka",
-    "description": "Abka faashinka"
+    "title": "Luxe Faashinka",
+    "description": "Hel faashinka joogtada ah - iibso oo iibi dharka la isticmaalay"
   },
   "home": {
     "title": "Faashinka"
   },
+  "hero": {
+    "badge": "Xilli Cusub Urur",
+    "title": {
+      "line1": "Qaabkaaga",
+      "line2": "Shakhsiga Kor u Qaad"
+    },
+    "subtitle": "Hel faashinka la isticmaalay ee loo doortay calaamadaha dunida ugu caansan. Raaxo joogto ah gacantaada.",
+    "cta": {
+      "shop": "Hadda Iibso",
+      "explore": "Baadhso Ururrada"
+    },
+    "stats": {
+      "items": "Alaab La Doortay",
+      "brands": "Calaamado Heer Sare ah",
+      "discount": "Dhimis"
+    },
+    "featured": {
+      "label": "La Muujiyay",
+      "item": "Silk Blazer"
+    },
+    "trending": {
+      "label": "Hadda La Jecel yahay",
+      "count": "+2.4k alaab"
+    }
+  },
   "common": {
-    "loading": "Waa la soo rarayaa...",
+    "loading": "Waa la soo dejinayaa...",
     "error": "Khalad ayaa dhacay",
-    "retry": "Isku day mar kale"
+    "retry": "Isku day mar kale",
+    "seeAll": "Eeg dhammaan",
+    "more": "Wax badan"
+  },
+  "search": {
+    "placeholder": "Maxaad raadineysaa?",
+    "filters": "Shaandhayno"
+  },
+  "categories": {
+    "title": "Qaybaha",
+    "women": "Haweenka",
+    "men": "Ragga",
+    "children": "Alaabta Carruurta",
+    "accessories": "Qurxinta",
+    "sports": "Ciyaaraha"
+  },
+  "subcategories": {
+    "shirts": "Shaatiyaal",
+    "trousers": "Surwaal",
+    "jeans": "Jiins",
+    "suits": "Suudh",
+    "shoes": "Kabo",
+    "dresses": "Dhar",
+    "tops": "Dhar Sare",
+    "jumpers": "Jambar",
+    "sweatshirts": "Shaati Dhidid",
+    "coats": "Koodhka",
+    "girls": "Gabdhaha",
+    "boys": "Wiilasha",
+    "bags": "Shandado",
+    "jewelry": "Dahab",
+    "watches": "Saacado",
+    "activewear": "Dharka Jimicsiga",
+    "sneakers": "Kabo Ciyaareed"
+  },
+  "promos": {
+    "register": {
+      "title": "Hadda is diiwaan geli",
+      "subtitle": "Hel qiimo dhimis dalabkaaga koowaad",
+      "cta": "Is diiwaan geli"
+    },
+    "sale": {
+      "title": "Qiimaha waa dhacay!",
+      "subtitle": "Hadda ilaa 90% dhimis"
+    },
+    "budget": {
+      "title": "Fursad dheeraad ah",
+      "subtitle": "$0 ilaa $3 alaab dooro"
+    },
+    "brands": {
+      "title": "Doorashada Sumadaha",
+      "subtitle": "Zara, Reserved, Mango iyo wax kale"
+    },
+    "seasonal": {
+      "title": "Faashinka kululeyn",
+      "subtitle": "Hel jaakadaha iyo koodhka jiilaalka"
+    }
+  },
+  "filters": {
+    "quickFilters": "Shaandhada Degdega",
+    "upTo10": "Ilaa $10",
+    "perfectCondition": "Xaalad fiican",
+    "sale": "Iibka"
+  },
+  "products": {
+    "bargainTitle": "Bilow raadintaada qiimo jaban!",
+    "premiumTitle": "Qaab Sare Qiimo Fiican",
+    "lastDays": "{days} maalmood ugu dambeeyay",
+    "currency": "$"
+  },
+  "nav": {
+    "home": "Guriga",
+    "favorites": "Jeclaystayaasha",
+    "donate": "Alaab u deeq",
+    "chats": "Wada hadal",
+    "profile": "Bogga shaqsiga"
+  },
+  "sizes": {
+    "title": "U iibso cabbirka"
+  },
+  "settings": {
+    "language": "Luuqad"
+  },
+  "searchFilters": {
+    "price": "Qiimaha",
+    "size": "Cabbirka",
+    "brand": "Sumadda",
+    "condition": "Xaalada",
+    "color": "Midabka",
+    "clear": "Nadiifi",
+    "apply": "Codso",
+    "searchPlaceholder": "Maxaad raadineysaa?",
+    "notifyUpdates": "Ii soo sheeg wixii cusub"
   }
 }
