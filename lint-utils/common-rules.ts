@@ -96,7 +96,7 @@ const commonRules = {
   'prefer-rest-params'            : error,
   'prefer-spread'                 : error,
   'prefer-template'               : error,
-  'require-await'                 : error,
+  'require-await'                 : off,
   'sort-keys'                     : [
     error,
     'asc',

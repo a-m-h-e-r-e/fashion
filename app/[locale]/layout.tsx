@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+// eslint-disable-next-line camelcase
+import { Playfair_Display, DM_Sans } from 'next/font/google'
 import { notFound } from 'next/navigation'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages, setRequestLocale } from 'next-intl/server'
@@ -9,7 +10,17 @@ import { MSWProvider } from '@/components/providers/msw-provider'
 import '../globals.css'
 
 /* eslint-disable new-cap */
-const inter = Inter( { subsets: [ 'latin' ] } )
+const playfair = Playfair_Display( {
+  subsets  : [ 'latin' ],
+  variable : '--font-playfair',
+  weight   : [ '400', '500', '600', '700', '800', '900' ],
+} )
+
+const dmSans = DM_Sans( {
+  subsets  : [ 'latin' ],
+  variable : '--font-dm-sans',
+  weight   : [ '400', '500', '600', '700' ],
+} )
 
 export const generateStaticParams = () => routing.locales.map( ( locale ) => ( { locale } ) )
 export const generateMetadata = async ( { params }: { params: Promise<{ locale: string }> } ): Promise<Metadata> => {
@@ -46,7 +57,7 @@ export default async function LocaleLayout( {
 
   return (
     <html className='dark' dir={ dir } lang={ locale }>
-      <body className={ inter.className }>
+      <body className={ `${ playfair.variable } ${ dmSans.variable } font-sans` }>
         <MSWProvider>
           <NextIntlClientProvider messages={ messages }>
             {children}
