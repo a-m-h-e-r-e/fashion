@@ -260,18 +260,8 @@
     mix-blend-mode: overlay;
   }
 
-  /* Light Fashion: subtle green tree pattern (not full green background) */
   .bg-brand {
     background-color: hsl(95, 28%, 58%);
-  }
-
-  .brand-pattern {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    opacity: 0.08;
-    background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 8 L48 28 L40 24 L32 28 Z M40 28 L52 52 L40 44 L28 52 Z M40 44 L56 76 L40 68 L24 76 Z' fill='%23789B66' fill-opacity='0.7'/%3E%3C/svg%3E");
-    background-size: 80px 80px;
   }
 
   /* Gradient borders */

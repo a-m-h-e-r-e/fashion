@@ -57,9 +57,7 @@ export default async function LocaleLayout( {
 
   return (
     <html className='dark' dir={ dir } lang={ locale }>
-      <body className={ `${ playfair.variable } ${ dmSans.variable } font-sans relative min-h-screen` }>
-        {/* Light Fashion: olive green + tree pattern background */}
-        <div aria-hidden className='brand-pattern fixed inset-0 -z-10' />
+      <body className={ `${ playfair.variable } ${ dmSans.variable } font-sans min-h-screen` }>
         <MSWProvider>
           <NextIntlClientProvider messages={ messages }>
             {children}
