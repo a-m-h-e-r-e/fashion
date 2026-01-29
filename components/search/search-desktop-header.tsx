@@ -1,6 +1,7 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
+import Image from 'next/image'
 import { ShoppingBag, Search, Heart } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { Link } from '@/i18n/navigation'
@@ -30,17 +31,23 @@ export function SearchDesktopHeader( {
       <div className='absolute inset-0 border-b border-white/10 bg-background/80 backdrop-blur-xl' />
 
       <div className='relative mx-auto flex h-20 max-w-7xl items-center justify-between gap-8 px-8'>
-        {/* Logo */}
+        {/* Logo - Light Fashion */}
         <Link className='group flex shrink-0 items-center gap-3' href='/'>
-          <div className='flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-[hsl(var(--gold))] to-[hsl(var(--gold-dark))] shadow-lg transition-transform group-hover:scale-105'>
-            <ShoppingBag className='h-5 w-5 text-black' />
+          <div className='relative h-10 w-10 shrink-0 overflow-hidden rounded-full border-2 border-[hsl(var(--border))] shadow-lg transition-transform group-hover:scale-105'>
+            <Image
+              alt='Light Fashion'
+              className='object-contain p-0.5'
+              fill
+              sizes='40px'
+              src='/images/light-fashion-logo.png'
+            />
           </div>
           <div className='flex flex-col'>
-            <span className='font-serif text-xl font-bold tracking-wide text-white'>
-              LUXE
+            <span className='font-sans text-xl font-bold tracking-wide text-white'>
+              Light Fashion
             </span>
-            <span className='text-[10px] font-medium uppercase tracking-[0.2em] text-muted-foreground'>
-              Fashion
+            <span className='text-[10px] font-medium text-muted-foreground'>
+              +251932683215
             </span>
           </div>
         </Link>
