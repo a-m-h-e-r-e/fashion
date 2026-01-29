@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "eslint && next build",
     "start": "next start",
+    "deploy:zip": "mkdir -p .next/standalone/.next .next/standalone/public && cp -R .next/static .next/standalone/.next/static && cp -R public/* .next/standalone/public/ && (cd .next/standalone && zip -r ../../fashion-build.zip .)",
     "test": "vitest",
     "lint": "eslint --fix",
     "lint:fix": "eslint --fix"
