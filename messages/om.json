@@ -1,14 +1,131 @@
 {
   "metadata": {
-    "title": "Faashinii",
-    "description": "Aplikeeshinii faashinii"
+    "title": "Luxe Faashinii",
+    "description": "Faashinii itti fufiinsa qabu argi - uffata fayyadame bitii fi gurguri"
   },
   "home": {
     "title": "Faashinii"
   },
+  "hero": {
+    "badge": "Kuusaa Wayitii Haaraa",
+    "title": {
+      "line1": "Akkaataa Dhuunfaa",
+      "line2": "Kee Ol Kaasi"
+    },
+    "subtitle": "Faashinii fayyadame kan barnootaa addunyaa irraa filatame argi. Luxury itti fufiinsa qabu harka kee irra.",
+    "cta": {
+      "shop": "Amma Biti",
+      "explore": "Kuusaa Ilaali"
+    },
+    "stats": {
+      "items": "Meeshaalee Filataman",
+      "brands": "Barnootaa Premium",
+      "discount": "Hir'isuu"
+    },
+    "featured": {
+      "label": "Addaa",
+      "item": "Silk Blazer"
+    },
+    "trending": {
+      "label": "Amma Jaalatamaa",
+      "count": "+2.4k meeshaalee"
+    }
+  },
   "common": {
     "loading": "Fe'aa jira...",
     "error": "Dogoggorri uumame",
-    "retry": "Irra deebi'ii yaali"
+    "retry": "Irra deebi'ii yaali",
+    "seeAll": "Hunda ilaali",
+    "more": "Dabalata"
+  },
+  "search": {
+    "placeholder": "Maal barbaadaa jirta?",
+    "filters": "Filannoo"
+  },
+  "categories": {
+    "title": "Ramaddii",
+    "women": "Dubartootaa",
+    "men": "Dhiirotaa",
+    "children": "Meeshaalee Daa'immanii",
+    "accessories": "Faayaalee",
+    "sports": "Ispoortii"
+  },
+  "subcategories": {
+    "shirts": "Shaartii",
+    "trousers": "Surrii",
+    "jeans": "Jiinsii",
+    "suits": "Suutii",
+    "shoes": "Kophee",
+    "dresses": "Uffata",
+    "tops": "Uffata Gubbaa",
+    "jumpers": "Jamparootaa",
+    "sweatshirts": "Shaartii Dafqa",
+    "coats": "Kootii",
+    "girls": "Shamarran",
+    "boys": "Ijoollee Dhiiraa",
+    "bags": "Korojoo",
+    "jewelry": "Faaya",
+    "watches": "Sa'aatii",
+    "activewear": "Uffata Sochii",
+    "sneakers": "Kophee Ispoortii"
+  },
+  "promos": {
+    "register": {
+      "title": "Amma galmaa'i",
+      "subtitle": "Ajaja jalqabaa kee irratti hir'ina argadhu",
+      "cta": "Galmaa'i"
+    },
+    "sale": {
+      "title": "Gatiin Hir'ate!",
+      "subtitle": "Amma hanga 90% hir'ina"
+    },
+    "budget": {
+      "title": "Carraa dabalataa",
+      "subtitle": "$0 hanga $3 meeshaalee filadhu"
+    },
+    "brands": {
+      "title": "Filannoo Beekamaa",
+      "subtitle": "Zara, Reserved, Mango fi kan biroo"
+    },
+    "seasonal": {
+      "title": "Faashinii ho'isu",
+      "subtitle": "Jaakeetii fi kootii qorraa argi"
+    }
+  },
+  "filters": {
+    "quickFilters": "Filannoo Ariifataa",
+    "upTo10": "Hanga $10",
+    "perfectCondition": "Haala gaarii keessa",
+    "sale": "Gurgurtaa"
+  },
+  "products": {
+    "bargainTitle": "Barbaaduu daldala gaarii kee jalqabi!",
+    "premiumTitle": "Akkaataa Olaanaa Gatii Gaariitiin",
+    "lastDays": "Guyyaa {days} dhumaa",
+    "currency": "$"
+  },
+  "nav": {
+    "home": "Mana",
+    "favorites": "Jaallatamoo",
+    "donate": "Meeshaalee kenni",
+    "chats": "Haasawa",
+    "profile": "Piroofaayilii"
+  },
+  "sizes": {
+    "title": "Hamma bitadhu"
+  },
+  "settings": {
+    "language": "Afaan"
+  },
+  "searchFilters": {
+    "price": "Gatii",
+    "size": "Hamma",
+    "brand": "Beekamaa",
+    "condition": "Haala",
+    "color": "Bifa",
+    "clear": "Haqi",
+    "apply": "Fayyadami",
+    "searchPlaceholder": "Maal barbaadaa jirta?",
+    "notifyUpdates": "Waa'ee haaromsa na beeksisi"
   }
 }

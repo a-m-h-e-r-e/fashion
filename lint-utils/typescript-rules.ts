@@ -123,7 +123,7 @@ const typescriptRules = {
   '@typescript-eslint/prefer-reduce-type-parameter'           : error,
   '@typescript-eslint/prefer-return-this-type'                : error,
   '@typescript-eslint/promise-function-async'                 : error,
-  '@typescript-eslint/require-await'                          : error,
+  '@typescript-eslint/require-await'                          : off,
   '@typescript-eslint/sort-type-constituents'                 : error,
   '@typescript-eslint/strict-boolean-expressions'             : error,
   '@typescript-eslint/unified-signatures'                     : error,

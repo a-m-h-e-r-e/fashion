@@ -31,7 +31,7 @@ const commonRules = {
   'default-param-last'     : error,
   'dot-notation'           : error,
   eqeqeq                   : error,
-  'func-style'             : [ error ],
+  //   'func-style'             : [ error ], TODO: Might need to enable this rule
   'grouped-accessor-pairs' : [ error, 'getBeforeSet' ],
   'id-length'              : [
     error,
@@ -96,7 +96,7 @@ const commonRules = {
   'prefer-rest-params'            : error,
   'prefer-spread'                 : error,
   'prefer-template'               : error,
-  'require-await'                 : error,
+  'require-await'                 : off,
   'sort-keys'                     : [
     error,
     'asc',

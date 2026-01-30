@@ -1,14 +1,131 @@
 {
   "metadata": {
-    "title": "أزياء",
-    "description": "تطبيق الأزياء"
+    "title": "لوكس أزياء",
+    "description": "اكتشف الأزياء المستدامة - اشترِ وبِع الملابس المستعملة"
   },
   "home": {
     "title": "أزياء"
   },
+  "hero": {
+    "badge": "مجموعة الموسم الجديد",
+    "title": {
+      "line1": "ارتقِ بأسلوبك",
+      "line2": "الشخصي"
+    },
+    "subtitle": "اكتشف أزياء مستعملة منتقاة من أكثر الماركات العالمية رواجاً. فخامة مستدامة بين يديك.",
+    "cta": {
+      "shop": "تسوق الآن",
+      "explore": "استكشف المجموعات"
+    },
+    "stats": {
+      "items": "قطعة منتقاة",
+      "brands": "ماركة فاخرة",
+      "discount": "خصم من السعر"
+    },
+    "featured": {
+      "label": "مميز",
+      "item": "بليزر حرير"
+    },
+    "trending": {
+      "label": "رائج الآن",
+      "count": "+2.4 ألف قطعة"
+    }
+  },
   "common": {
     "loading": "جار التحميل...",
     "error": "حدث خطأ",
-    "retry": "حاول مرة أخرى"
+    "retry": "حاول مرة أخرى",
+    "seeAll": "عرض الكل",
+    "more": "المزيد"
+  },
+  "search": {
+    "placeholder": "عن ماذا تبحث؟",
+    "filters": "تصفية"
+  },
+  "categories": {
+    "title": "الفئات",
+    "women": "نساء",
+    "men": "رجال",
+    "children": "أغراض الأطفال",
+    "accessories": "إكسسوارات",
+    "sports": "رياضة"
+  },
+  "subcategories": {
+    "shirts": "قمصان",
+    "trousers": "بناطيل",
+    "jeans": "جينز",
+    "suits": "بدلات",
+    "shoes": "أحذية",
+    "dresses": "فساتين",
+    "tops": "بلوزات",
+    "jumpers": "كنزات صوفية",
+    "sweatshirts": "قمصان رياضية",
+    "coats": "معاطف",
+    "girls": "بنات",
+    "boys": "أولاد",
+    "bags": "حقائب",
+    "jewelry": "مجوهرات",
+    "watches": "ساعات",
+    "activewear": "ملابس رياضية",
+    "sneakers": "أحذية رياضية"
+  },
+  "promos": {
+    "register": {
+      "title": "سجل الآن",
+      "subtitle": "احصل على خصم على طلبك الأول",
+      "cta": "التسجيل"
+    },
+    "sale": {
+      "title": "تخفيضات الأسعار!",
+      "subtitle": "الآن حتى 90% خصم"
+    },
+    "budget": {
+      "title": "مناسبة إضافية",
+      "subtitle": "اختر قطعًا من $0 إلى $3"
+    },
+    "brands": {
+      "title": "تشكيلة الماركات",
+      "subtitle": "زارا، ريزيرفد، مانجو والمزيد"
+    },
+    "seasonal": {
+      "title": "أزياء تدفئ",
+      "subtitle": "اكتشف جاكيتات ومعاطف الشتاء"
+    }
+  },
+  "filters": {
+    "quickFilters": "تصفية سريعة",
+    "upTo10": "حتى $10",
+    "perfectCondition": "في حالة ممتازة",
+    "sale": "تخفيضات"
+  },
+  "products": {
+    "bargainTitle": "ابدأ رحلة البحث عن الصفقات!",
+    "premiumTitle": "أناقة فاخرة بسعر رائع",
+    "lastDays": "آخر {days} أيام",
+    "currency": "$"
+  },
+  "nav": {
+    "home": "الرئيسية",
+    "favorites": "المفضلة",
+    "donate": "تبرع بالملابس",
+    "chats": "المحادثات",
+    "profile": "الملف الشخصي"
+  },
+  "sizes": {
+    "title": "تسوق حسب المقاس"
+  },
+  "settings": {
+    "language": "اللغة"
+  },
+  "searchFilters": {
+    "price": "السعر",
+    "size": "المقاس",
+    "brand": "الماركة",
+    "condition": "الحالة",
+    "color": "اللون",
+    "clear": "مسح",
+    "apply": "تطبيق",
+    "searchPlaceholder": "عن ماذا تبحث؟",
+    "notifyUpdates": "أعلمني بالتحديثات"
   }
 }
