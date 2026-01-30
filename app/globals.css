@@ -30,12 +30,12 @@
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
 
-    /* Custom accent colors */
-    --gold: 43 96% 56%;
-    --gold-light: 45 93% 70%;
-    --gold-dark: 40 90% 45%;
-    --rose: 350 80% 65%;
-    --rose-light: 350 100% 90%;
+    /* Light Fashion brand accents (used in .dark) */
+    --gold: 88 55% 73%;
+    --gold-light: 88 58% 73%;
+    --gold-dark: 90 50% 53%;
+    --rose: 95 28% 55%;
+    --rose-light: 95 22% 65%;
     
     /* Font families */
     --font-serif: var(--font-playfair), Georgia, serif;
@@ -43,14 +43,15 @@
   }
 
   .dark {
+    /* Dark neutral background; Light Fashion greens as primary/accent only */
     --background: 240 10% 4%;
     --foreground: 0 0% 98%;
     --card: 240 6% 8%;
     --card-foreground: 0 0% 98%;
     --popover: 240 6% 8%;
     --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 10% 4%;
+    --primary: 88 50% 53%;
+    --primary-foreground: 0 0% 100%;
     --secondary: 240 5% 12%;
     --secondary-foreground: 0 0% 98%;
     --muted: 240 5% 15%;
@@ -61,12 +62,18 @@
     --destructive-foreground: 0 0% 98%;
     --border: 240 5% 18%;
     --input: 240 5% 18%;
-    --ring: 0 0% 83.1%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+    --ring: 88 55% 73%;
+    --chart-1: 88 50% 53%;
+    --chart-2: 98 24% 50%;
+    --chart-3: 95 28% 58%;
+    --chart-4: 85 18% 77%;
+    --chart-5: 90 8% 74%;
+    /* Light Fashion brand accents (logo gradient: lime green) */
+    --gold: 88 55% 73%;
+    --gold-light: 88 58% 73%;
+    --gold-dark: 90 50% 53%;
+    --rose: 95 28% 55%;
+    --rose-light: 95 22% 65%;
   }
 }
 
@@ -111,9 +118,10 @@
 }
 
 @layer components {
-  /* Glass morphism card */
+  /* Glass morphism card (Light Fashion: subtle green border) */
   .glass-card {
     @apply relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl;
+    border-color: hsl(var(--border) / 0.4);
   }
   
   .glass-card::before {
@@ -121,10 +129,10 @@
     @apply absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent pointer-events-none;
   }
 
-  /* Gold gradient text */
+  /* Light Fashion: lime gradient text (logo style) */
   .text-gradient-gold {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(var(--gold-light)) 0%, hsl(var(--gold)) 50%, hsl(var(--gold-dark)) 100%);
+    background-image: linear-gradient(180deg, hsl(var(--gold-light)) 0%, hsl(var(--gold)) 50%, hsl(var(--gold-dark)) 100%);
   }
 
   /* Glow effects */
@@ -156,11 +164,11 @@
     animation: shimmer 2s ease-in-out infinite;
   }
 
-  /* Elegant button */
+  /* Light Fashion: lime gradient button (logo badge style) */
   .btn-elegant {
     @apply relative overflow-hidden rounded-full px-8 py-3 font-medium transition-all duration-300;
-    @apply bg-gradient-to-r from-[hsl(var(--gold-dark))] via-[hsl(var(--gold))] to-[hsl(var(--gold-light))];
-    @apply text-black shadow-lg;
+    background: linear-gradient(180deg, hsl(var(--gold-light)) 0%, hsl(var(--gold-dark)) 100%);
+    @apply text-white shadow-lg;
   }
 
   .btn-elegant:hover {
@@ -177,13 +185,15 @@
     @apply opacity-100;
   }
 
-  /* Outline button */
+  /* Outline button (Light Fashion: grey-green border) */
   .btn-outline {
-    @apply relative rounded-full border-2 border-white/30 px-8 py-3 font-medium text-white transition-all duration-300;
+    @apply relative rounded-full border-2 px-8 py-3 font-medium text-white transition-all duration-300;
+    border-color: hsl(var(--border) / 0.8);
   }
 
   .btn-outline:hover {
-    @apply border-white bg-white/10;
+    @apply bg-white/10;
+    border-color: hsl(var(--border));
   }
 
   /* Card hover lift */
@@ -248,6 +258,10 @@
     opacity: 0.03;
     pointer-events: none;
     mix-blend-mode: overlay;
+  }
+
+  .bg-brand {
+    background-color: hsl(95, 28%, 58%);
   }
 
   /* Gradient borders */
@@ -396,14 +410,14 @@
   100% { transform: translateX(0); }
 }
 
-/* Gradient mesh background */
+/* Gradient mesh background (Light Fashion greens) */
 .bg-mesh {
   background-color: hsl(var(--background));
   background-image: 
-    radial-gradient(at 0% 0%, hsl(var(--gold) / 0.15) 0px, transparent 50%),
-    radial-gradient(at 100% 0%, hsl(var(--rose) / 0.1) 0px, transparent 50%),
-    radial-gradient(at 100% 100%, hsl(var(--gold) / 0.1) 0px, transparent 50%),
-    radial-gradient(at 0% 100%, hsl(var(--rose) / 0.08) 0px, transparent 50%);
+    radial-gradient(at 0% 0%, hsl(var(--gold) / 0.2) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, hsl(var(--gold-dark) / 0.15) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, hsl(var(--gold) / 0.15) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, hsl(var(--rose) / 0.12) 0px, transparent 50%);
 }
 
 /* Hero gradient */
