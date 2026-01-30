@@ -1,14 +1,131 @@
 {
   "metadata": {
-    "title": "Fashion",
-    "description": "Fashion app"
+    "title": "LUXE Fashion",
+    "description": "Discover sustainable fashion - buy and sell pre-loved clothing"
   },
   "home": {
     "title": "Fashion"
   },
+  "hero": {
+    "badge": "New Season Collection",
+    "title": {
+      "line1": "Elevate Your",
+      "line2": "Personal Style"
+    },
+    "subtitle": "Discover curated pre-loved fashion from the world's most coveted brands. Sustainable luxury at your fingertips.",
+    "cta": {
+      "shop": "Shop Now",
+      "explore": "Explore Collections"
+    },
+    "stats": {
+      "items": "Curated Items",
+      "brands": "Premium Brands",
+      "discount": "Off Retail"
+    },
+    "featured": {
+      "label": "Featured",
+      "item": "Silk Blazer"
+    },
+    "trending": {
+      "label": "Trending Now",
+      "count": "+2.4k items"
+    }
+  },
   "common": {
     "loading": "Loading...",
     "error": "An error occurred",
-    "retry": "Try again"
+    "retry": "Try again",
+    "seeAll": "See all",
+    "more": "More"
+  },
+  "search": {
+    "placeholder": "What are you searching for?",
+    "filters": "Filters"
+  },
+  "categories": {
+    "title": "Categories",
+    "women": "Women",
+    "men": "Men",
+    "children": "Children's Items",
+    "accessories": "Accessories",
+    "sports": "Sports"
+  },
+  "subcategories": {
+    "shirts": "Shirts",
+    "trousers": "Trousers",
+    "jeans": "Jeans",
+    "suits": "Suits",
+    "shoes": "Shoes",
+    "dresses": "Dresses",
+    "tops": "Tops",
+    "jumpers": "Jumpers",
+    "sweatshirts": "Sweatshirts",
+    "coats": "Coats",
+    "girls": "Girls",
+    "boys": "Boys",
+    "bags": "Bags",
+    "jewelry": "Jewelry",
+    "watches": "Watches",
+    "activewear": "Activewear",
+    "sneakers": "Sneakers"
+  },
+  "promos": {
+    "register": {
+      "title": "Register now",
+      "subtitle": "Get discount on your first order",
+      "cta": "Sign up"
+    },
+    "sale": {
+      "title": "Prices Drop!",
+      "subtitle": "Now up to 90% off"
+    },
+    "budget": {
+      "title": "Extra occasion",
+      "subtitle": "Choose items from $0 to $3"
+    },
+    "brands": {
+      "title": "Brands selection",
+      "subtitle": "Zara, Reserved, Mango & more"
+    },
+    "seasonal": {
+      "title": "Fashion that warms",
+      "subtitle": "Discover winter jackets and coats"
+    }
+  },
+  "filters": {
+    "quickFilters": "Quick Filters",
+    "upTo10": "Up to $10",
+    "perfectCondition": "In perfect condition",
+    "sale": "Sale"
+  },
+  "products": {
+    "bargainTitle": "Start your bargain hunt!",
+    "premiumTitle": "Premium Style at a Great Price",
+    "lastDays": "Last {days} days",
+    "currency": "$"
+  },
+  "nav": {
+    "home": "Home",
+    "favorites": "Favorites",
+    "donate": "Donate items",
+    "chats": "Chats",
+    "profile": "Profile"
+  },
+  "sizes": {
+    "title": "Shop by size"
+  },
+  "settings": {
+    "language": "Language"
+  },
+  "searchFilters": {
+    "price": "Price",
+    "size": "Size",
+    "brand": "Brand",
+    "condition": "Condition",
+    "color": "Color",
+    "clear": "Clear",
+    "apply": "Apply",
+    "searchPlaceholder": "What are you searching for?",
+    "notifyUpdates": "Notify about updates"
   }
 }

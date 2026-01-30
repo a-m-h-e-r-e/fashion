@@ -1,14 +1,131 @@
 {
   "metadata": {
-    "title": "ፋሽን",
-    "description": "ናይ ፋሽን ኣፕሊኬሽን"
+    "title": "ሉክስ ፋሽን",
+    "description": "ዘላቒ ፋሽን ርኸቡ - ዝተጠቕምሉ ክዳውንቲ ግዙኡን ሸጡን"
   },
   "home": {
     "title": "ፋሽን"
   },
+  "hero": {
+    "badge": "ሓድሽ ወቕቲ ስብስብ",
+    "title": {
+      "line1": "ናይ ባዕልኻ ስታይል",
+      "line2": "ኣዕብዮ"
+    },
+    "subtitle": "ካብ ኣብ ዓለም ዝፍለጡ ብራንዶች ዝተመረጹ ዝተጠቕምሉ ፋሽኖች ርኸቡ። ዘላቒ ቅንጦት ኣብ ኢድካ።",
+    "cta": {
+      "shop": "ሕጂ ግዛእ",
+      "explore": "ስብስቦች ረአ"
+    },
+    "stats": {
+      "items": "ዝተመረጹ ኣቑሑ",
+      "brands": "ፕሪሚየም ብራንዶች",
+      "discount": "ቅናሽ"
+    },
+    "featured": {
+      "label": "ዝተመረጸ",
+      "item": "ናይ ሲልክ ብሌዘር"
+    },
+    "trending": {
+      "label": "ሕጂ ተወዳዲ",
+      "count": "+2.4k ኣቑሑ"
+    }
+  },
   "common": {
-    "loading": "ይጽዕን ኣሎ...",
+    "loading": "ይጽዓን ኣሎ...",
     "error": "ጌጋ ተፈጢሩ",
-    "retry": "ደጊምካ ፈትን"
+    "retry": "ደጊምካ ፈትን",
+    "seeAll": "ኩሉ ርአ",
+    "more": "ተወሳኺ"
+  },
+  "search": {
+    "placeholder": "እንታይ ትደሊ ኣለኻ?",
+    "filters": "መጻረዪታት"
+  },
+  "categories": {
+    "title": "ምድባት",
+    "women": "ደቂ ኣንስትዮ",
+    "men": "ደቂ ተባዕትዮ",
+    "children": "ናይ ቆልዑ ኣቑሑ",
+    "accessories": "ማስገጃታት",
+    "sports": "ስፖርት"
+  },
+  "subcategories": {
+    "shirts": "ሸሚዛት",
+    "trousers": "ሱሪታት",
+    "jeans": "ጂንስ",
+    "suits": "ሱት",
+    "shoes": "ኣሳእን",
+    "dresses": "ክዳውንቲ",
+    "tops": "ላዕለዋይ ክዳን",
+    "jumpers": "ጃምፐርስ",
+    "sweatshirts": "ሽወትሸርት",
+    "coats": "ኮት",
+    "girls": "ኣዋልድ",
+    "boys": "ኣወዳት",
+    "bags": "ቦርሳታት",
+    "jewelry": "ጌጣጌጥ",
+    "watches": "ሰዓታት",
+    "activewear": "ናይ ስፖርት ክዳን",
+    "sneakers": "ስኒከርስ"
+  },
+  "promos": {
+    "register": {
+      "title": "ሕጂ ተመዝገቡ",
+      "subtitle": "ኣብ መጀመርታ ትእዛዝኩም ቅናሽ ርኸቡ",
+      "cta": "ተመዝገቡ"
+    },
+    "sale": {
+      "title": "ዋጋ ወሪዱ!",
+      "subtitle": "ሕጂ ክሳብ 90% ቅናሽ"
+    },
+    "budget": {
+      "title": "ተወሳኺ ዕድል",
+      "subtitle": "$0 ክሳብ $3 ኣቑሑ ምረጹ"
+    },
+    "brands": {
+      "title": "ምርጫ ብራንድ",
+      "subtitle": "ዛራ፣ ሪዘርቭድ፣ ማንጎ ወዘተ"
+    },
+    "seasonal": {
+      "title": "ዘሙቕ ፋሽን",
+      "subtitle": "ናይ ክረምቲ ጃኬታትን ኮታትን ርኸቡ"
+    }
+  },
+  "filters": {
+    "quickFilters": "ቅልጡፍ ምፍላይ",
+    "upTo10": "ክሳብ $10",
+    "perfectCondition": "ፍጹም ኩነታት",
+    "sale": "ሽያጥ"
+  },
+  "products": {
+    "bargainTitle": "ናይ ሕሱር ዋጋ ድልየትኩም ጀምሩ!",
+    "premiumTitle": "ፕሪሚየም ስታይል ብጽቡቕ ዋጋ",
+    "lastDays": "ዝሓለፈ {days} መዓልታት",
+    "currency": "$"
+  },
+  "nav": {
+    "home": "ገዛ",
+    "favorites": "ፍቱዋት",
+    "donate": "ኣቑሑ ሃቡ",
+    "chats": "ዕላላት",
+    "profile": "ፕሮፋይል"
+  },
+  "sizes": {
+    "title": "ብመጠን ግዙኡ"
+  },
+  "settings": {
+    "language": "ቋንቋ"
+  },
+  "searchFilters": {
+    "price": "ዋጋ",
+    "size": "ዓቐን",
+    "brand": "ብራንድ",
+    "condition": "ኩነታት",
+    "color": "ሕብሪ",
+    "clear": "ኣጽሪ",
+    "apply": "ተግብር",
+    "searchPlaceholder": "እንታይ ትደሊ ኣለኻ?",
+    "notifyUpdates": "ብዛዕባ ምሕዳሳት ኣፍልጠኒ"
   }
 }

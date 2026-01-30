@@ -1,14 +1,131 @@
 {
   "metadata": {
-    "title": "ፋሽን",
-    "description": "የፋሽን መተግበሪያ"
+    "title": "ሉክስ ፋሽን",
+    "description": "ዘላቂ ፋሽን ያግኙ - ያገለገሉ ልብሶችን ይግዙ እና ይሽጡ"
   },
   "home": {
     "title": "ፋሽን"
   },
+  "hero": {
+    "badge": "የአዲስ ወቅት ስብስብ",
+    "title": {
+      "line1": "የግል ስታይልዎን",
+      "line2": "ያሳድጉ"
+    },
+    "subtitle": "ከዓለም ታዋቂ ብራንዶች የተመረጡ ያገለገሉ ፋሽኖችን ያግኙ። ዘላቂ ቅንጦት በእጅዎ።",
+    "cta": {
+      "shop": "አሁን ይግዙ",
+      "explore": "ስብስቦችን ያስሱ"
+    },
+    "stats": {
+      "items": "የተመረጡ ዕቃዎች",
+      "brands": "ፕሪሚየም ብራንዶች",
+      "discount": "ቅናሽ"
+    },
+    "featured": {
+      "label": "ተለይቶ የቀረበ",
+      "item": "የሐር ብሌዘር"
+    },
+    "trending": {
+      "label": "አሁን ተወዳጅ",
+      "count": "+2.4k ዕቃዎች"
+    }
+  },
   "common": {
     "loading": "በመጫን ላይ...",
     "error": "ስህተት ተከስቷል",
-    "retry": "እንደገና ሞክር"
+    "retry": "እንደገና ሞክር",
+    "seeAll": "ሁሉንም ይመልከቱ",
+    "more": "ተጨማሪ"
+  },
+  "search": {
+    "placeholder": "ምን እየፈለጉ ነው?",
+    "filters": "ማጣሪያዎች"
+  },
+  "categories": {
+    "title": "ምድቦች",
+    "women": "ሴቶች",
+    "men": "ወንዶች",
+    "children": "የልጆች ዕቃዎች",
+    "accessories": "ማስጌጫዎች",
+    "sports": "ስፖርት"
+  },
+  "subcategories": {
+    "shirts": "ሸሚዞች",
+    "trousers": "ሱሪዎች",
+    "jeans": "ጂንስ",
+    "suits": "ልብሶች",
+    "shoes": "ጫማዎች",
+    "dresses": "ቀሚሶች",
+    "tops": "የላይ ልብሶች",
+    "jumpers": "ሹራቦች",
+    "sweatshirts": "የላብ ሸሚዞች",
+    "coats": "ኮቶች",
+    "girls": "ሴት ልጆች",
+    "boys": "ወንድ ልጆች",
+    "bags": "ቦርሳዎች",
+    "jewelry": "ጌጣጌጥ",
+    "watches": "ሰዓቶች",
+    "activewear": "የስፖርት ልብስ",
+    "sneakers": "የስፖርት ጫማዎች"
+  },
+  "promos": {
+    "register": {
+      "title": "አሁን ይመዝገቡ",
+      "subtitle": "በመጀመሪያ ትዕዛዝዎ ላይ ቅናሽ ያግኙ",
+      "cta": "ይመዝገቡ"
+    },
+    "sale": {
+      "title": "ዋጋ ቅናሽ!",
+      "subtitle": "አሁን እስከ 90% ቅናሽ"
+    },
+    "budget": {
+      "title": "ተጨማሪ አጋጣሚ",
+      "subtitle": "ከ$0 እስከ $3 ዕቃዎችን ይምረጡ"
+    },
+    "brands": {
+      "title": "የብራንድ ምርጫ",
+      "subtitle": "ዛራ፣ ሪዘርቭድ፣ ማንጎ እና ሌሎች"
+    },
+    "seasonal": {
+      "title": "የሚያሞቅ ፋሽን",
+      "subtitle": "የክረምት ጃኬቶችን እና ኮቶችን ያግኙ"
+    }
+  },
+  "filters": {
+    "quickFilters": "ፈጣን ማጣሪያዎች",
+    "upTo10": "እስከ $10",
+    "perfectCondition": "ፍጹም ሁኔታ ላይ",
+    "sale": "ቅናሽ"
+  },
+  "products": {
+    "bargainTitle": "የድርድር ፍለጋዎን ይጀምሩ!",
+    "premiumTitle": "ፕሪሚየም ስታይል በጥሩ ዋጋ",
+    "lastDays": "የመጨረሻ {days} ቀናት",
+    "currency": "$"
+  },
+  "nav": {
+    "home": "መነሻ",
+    "favorites": "ተወዳጆች",
+    "donate": "ዕቃዎችን ለግሱ",
+    "chats": "ውይይቶች",
+    "profile": "መገለጫ"
+  },
+  "sizes": {
+    "title": "በመጠን ይግዙ"
+  },
+  "settings": {
+    "language": "ቋንቋ"
+  },
+  "searchFilters": {
+    "price": "ዋጋ",
+    "size": "መጠን",
+    "brand": "ብራንድ",
+    "condition": "ሁኔታ",
+    "color": "ቀለም",
+    "clear": "አጽዳ",
+    "apply": "ተግብር",
+    "searchPlaceholder": "ምን እየፈለጉ ነው?",
+    "notifyUpdates": "ስለ ዝማኔዎች አሳውቀኝ"
   }
 }
