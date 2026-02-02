@@ -26,9 +26,12 @@ describe( 'queryFunction', () => {
 
     const result = await fn( {} )
 
-    expect( mockGet ).toHaveBeenCalledTimes( 1 )
-    expect( mockGet ).toHaveBeenCalledWith( '/api/products', undefined )
-    expect( result ).toStrictEqual( { items: [] } )
+    expect( mockGet )
+      .toHaveBeenCalledTimes( 1 )
+    expect( mockGet )
+      .toHaveBeenCalledWith( '/api/products', undefined )
+    expect( result )
+      .toStrictEqual( { items: [] } )
   } )
 
   test( 'GET with id in params builds endpoint/id URL', async () => {
@@ -40,39 +43,52 @@ describe( 'queryFunction', () => {
 
     await fn( {} )
 
-    expect( mockGet ).toHaveBeenCalledWith( '/api/products/123', undefined )
+    expect( mockGet )
+      .toHaveBeenCalledWith( '/api/products/123', undefined )
   } )
 
   test( 'GET with rest params appends query string', async () => {
     const fn = queryFunction<{ items: Array<unknown> }>( {
       endpoint : '/api/products',
       method   : 'get',
-      params   : { category: 'shoes', limit: '10' },
+      params   : {
+        category : 'shoes',
+        limit    : '10',
+      },
     } )
 
     await fn( {} )
 
-    expect( mockGet ).toHaveBeenCalledTimes( 1 )
-    const url = mockGet.mock.calls[0][0]
+    expect( mockGet )
+      .toHaveBeenCalledTimes( 1 )
+    const [ url ] = mockGet.mock.calls[0] as [ string ]
 
-    expect( url ).toContain( '/api/products' )
-    expect( url ).toContain( 'category=shoes' )
-    expect( url ).toContain( 'limit=10' )
+    expect( url )
+      .toContain( '/api/products' )
+    expect( url )
+      .toContain( 'category=shoes' )
+    expect( url )
+      .toContain( 'limit=10' )
   } )
 
   test( 'GET with id and rest params builds URL with id and query', async () => {
     const fn = queryFunction<{ item: unknown }>( {
       endpoint : '/api/products',
       method   : 'get',
-      params   : { id: '1', expand: 'details' },
+      params   : {
+        expand : 'details',
+        id     : '1',
+      },
     } )
 
     await fn( {} )
 
-    const url = mockGet.mock.calls[0][0]
+    const [ url ] = mockGet.mock.calls[0] as [ string ]
 
-    expect( url ).toContain( '/api/products/1' )
-    expect( url ).toContain( 'expand=details' )
+    expect( url )
+      .toContain( '/api/products/1' )
+    expect( url )
+      .toContain( 'expand=details' )
   } )
 
   test( 'returns response.data', async () => {
@@ -85,7 +101,8 @@ describe( 'queryFunction', () => {
 
     const result = await fn( {} )
 
-    expect( result ).toStrictEqual( { name: 'Product' } )
+    expect( result )
+      .toStrictEqual( { name: 'Product' } )
   } )
 
   test( 'POST sends body and returns response.data', async () => {
@@ -97,42 +114,54 @@ describe( 'queryFunction', () => {
 
     const result = await fn( { title: 'New Product' } )
 
-    expect( mockPost ).toHaveBeenCalledTimes( 1 )
-    expect( mockPost ).toHaveBeenCalledWith(
-      '/api/products',
-      { title: 'New Product' },
-      undefined,
-    )
-    expect( result ).toStrictEqual( { id: '1' } )
+    expect( mockPost )
+      .toHaveBeenCalledTimes( 1 )
+    expect( mockPost )
+      .toHaveBeenCalledWith(
+        '/api/products',
+        { title: 'New Product' },
+        undefined,
+      )
+    expect( result )
+      .toStrictEqual( { id: '1' } )
   } )
 
   test( 'POST without queryKey sends rest from params as body', async () => {
     const fn = queryFunction<{ id: string }>( {
       endpoint : '/api/products',
       method   : 'post',
-      params   : { name: 'Shirt', price: '20' },
+      params   : {
+        name  : 'Shirt',
+        price : '20',
+      },
     } )
 
     await fn( {} )
 
-    expect( mockPost ).toHaveBeenCalledWith(
-      '/api/products',
-      { name: 'Shirt', price: '20' },
-      undefined,
-    )
+    expect( mockPost )
+      .toHaveBeenCalledWith(
+        '/api/products',
+        {
+          name  : 'Shirt',
+          price : '20',
+        },
+        undefined,
+      )
   } )
 
   test( 'passes httpClientConfiguration to GET', async () => {
+    /* eslint-disable-next-line @typescript-eslint/naming-convention */
     const config = { headers: { 'X-Custom': 'value' } }
 
     const fn = queryFunction<unknown>( {
-      endpoint                 : '/api/products',
-      method                   : 'get',
+      endpoint                : '/api/products',
       httpClientConfiguration : config,
+      method                  : 'get',
     } )
 
     await fn( {} )
 
-    expect( mockGet ).toHaveBeenCalledWith( '/api/products', config )
+    expect( mockGet )
+      .toHaveBeenCalledWith( '/api/products', config )
   } )
 } )
