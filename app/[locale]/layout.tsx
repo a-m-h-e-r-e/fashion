@@ -7,6 +7,8 @@ import { getMessages, setRequestLocale } from 'next-intl/server'
 import { routing } from '@/i18n/routing'
 import { isRtlLocale, type Locale } from '@/i18n/config'
 import { MSWProvider } from '@/components/providers/msw-provider'
+import { ThemeProvider } from '@/components/providers/theme-provider'
+import { ThemeScript } from '@/components/providers/theme-script'
 import '../globals.css'
 
 /* eslint-disable new-cap */
@@ -56,13 +58,16 @@ export default async function LocaleLayout( {
   const dir = isRtlLocale( locale as Locale ) ? 'rtl' : 'ltr'
 
   return (
-    <html className='dark' dir={ dir } lang={ locale }>
+    <html dir={ dir } lang={ locale } suppressHydrationWarning>
       <body className={ `${ playfair.variable } ${ dmSans.variable } font-sans min-h-screen` }>
-        <MSWProvider>
-          <NextIntlClientProvider messages={ messages }>
-            {children}
-          </NextIntlClientProvider>
-        </MSWProvider>
+        <ThemeScript />
+        <ThemeProvider>
+          <MSWProvider>
+            <NextIntlClientProvider messages={ messages }>
+              {children}
+            </NextIntlClientProvider>
+          </MSWProvider>
+        </ThemeProvider>
       </body>
     </html>
   )
