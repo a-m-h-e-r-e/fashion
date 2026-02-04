@@ -188,12 +188,12 @@
 
   /* Outline button (Light Fashion: grey-green border) */
   .btn-outline {
-    @apply relative rounded-full border-2 px-8 py-3 font-medium text-white transition-all duration-300;
+    @apply relative rounded-full border-2 px-8 py-3 font-medium text-foreground transition-all duration-300 dark:text-white;
     border-color: hsl(var(--border) / 0.8);
   }
 
   .btn-outline:hover {
-    @apply bg-white/10;
+    @apply bg-black/5 dark:bg-white/10;
     border-color: hsl(var(--border));
   }
 

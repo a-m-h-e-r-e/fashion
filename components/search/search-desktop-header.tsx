@@ -6,6 +6,7 @@ import { ShoppingBag, Search, Heart } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { Link } from '@/i18n/navigation'
 import { LanguageSwitcher } from '@/components/ui/language-switcher'
+import { ThemeToggle } from '@/components/ui/theme-toggle'
 
 interface SearchDesktopHeaderProps {
   categoryName : string
@@ -85,6 +86,9 @@ export function SearchDesktopHeader( {
 
           {/* Divider */}
           <div className='mx-2 h-6 w-px bg-white/10' />
+
+          {/* Theme toggle */}
+          <ThemeToggle />
 
           {/* Language switcher */}
           <LanguageSwitcher />
