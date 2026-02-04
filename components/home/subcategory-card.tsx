@@ -44,10 +44,10 @@ export function SubcategoryCard( { subcategory, className }: SubcategoryCardProp
 
         {/* Content */}
         <div className='absolute inset-x-0 bottom-0 p-3'>
-          <h3 className='font-serif text-sm font-semibold text-white'>
+          <h3 className='font-serif text-base font-semibold text-white'>
             {t( subcategory.name )}
           </h3>
-          <p className='mt-0.5 text-xs text-white/70'>
+          <p className='mt-0.5 text-sm text-white/70'>
             {subcategory.itemCount}+ items
           </p>
         </div>

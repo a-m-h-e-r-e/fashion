@@ -46,7 +46,7 @@ export function HeroSection( { className }: HeroSectionProps ) {
         <div className='z-10 flex flex-1 flex-col justify-center pt-8 lg:pt-0'>
           {/* Badge */}
           <div className='mb-6 animate-fade-in-up'>
-            <span className='inline-flex items-center gap-2 rounded-full border border-[hsl(var(--gold)/0.3)] bg-[hsl(var(--gold)/0.1)] px-4 py-1.5 text-sm font-medium text-[hsl(var(--gold-dark))] dark:text-[hsl(var(--gold-light))]'>
+            <span className='inline-flex items-center gap-2 rounded-full border border-[hsl(var(--gold)/0.3)] bg-[hsl(var(--gold)/0.1)] px-4 py-1.5 text-base font-medium text-[hsl(var(--gold-dark))] dark:text-[hsl(var(--gold-light))]'>
               <Sparkles className='h-4 w-4' />
               {t( 'badge' )}
             </span>
@@ -81,15 +81,15 @@ export function HeroSection( { className }: HeroSectionProps ) {
           <div className='mt-12 flex animate-fade-in-up flex-wrap gap-8 delay-400 lg:gap-12'>
             <div>
               <div className='font-serif text-3xl font-bold text-foreground dark:text-white lg:text-4xl'>50K+</div>
-              <div className='mt-1 text-sm text-muted-foreground'>{t( 'stats.items' )}</div>
+              <div className='mt-1 text-base text-muted-foreground'>{t( 'stats.items' )}</div>
             </div>
             <div>
               <div className='font-serif text-3xl font-bold text-foreground dark:text-white lg:text-4xl'>100+</div>
-              <div className='mt-1 text-sm text-muted-foreground'>{t( 'stats.brands' )}</div>
+              <div className='mt-1 text-base text-muted-foreground'>{t( 'stats.brands' )}</div>
             </div>
             <div>
               <div className='font-serif text-3xl font-bold text-[hsl(var(--gold))] lg:text-4xl'>70%</div>
-              <div className='mt-1 text-sm text-muted-foreground'>{t( 'stats.discount' )}</div>
+              <div className='mt-1 text-base text-muted-foreground'>{t( 'stats.discount' )}</div>
             </div>
           </div>
         </div>
@@ -128,9 +128,9 @@ export function HeroSection( { className }: HeroSectionProps ) {
                   />
                 </div>
                 <div>
-                  <p className='text-xs text-muted-foreground'>{t( 'featured.label' )}</p>
+                  <p className='text-sm text-muted-foreground'>{t( 'featured.label' )}</p>
                   <p className='font-medium text-foreground dark:text-white'>{t( 'featured.item' )}</p>
-                  <p className='text-sm font-bold text-[hsl(var(--gold))]'>$89</p>
+                  <p className='text-base font-bold text-[hsl(var(--gold))]'>$89</p>
                 </div>
               </div>
             </div>
@@ -143,7 +143,7 @@ export function HeroSection( { className }: HeroSectionProps ) {
                 </div>
                 <div>
                   <p className='font-medium text-foreground dark:text-white'>{t( 'trending.label' )}</p>
-                  <p className='text-xs text-muted-foreground'>{t( 'trending.count' )}</p>
+                  <p className='text-sm text-muted-foreground'>{t( 'trending.count' )}</p>
                 </div>
               </div>
             </div>

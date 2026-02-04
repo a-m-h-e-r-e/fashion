@@ -50,7 +50,7 @@ export function LanguageSwitcher() {
         type='button'
       >
         <Languages className='h-5 w-5' />
-        <span className='text-sm font-medium'>{localeNames[locale]}</span>
+        <span className='text-base font-medium'>{localeNames[locale]}</span>
         <ChevronDown
           className={
             cn(
@@ -71,7 +71,7 @@ export function LanguageSwitcher() {
                   <button
                     className={
                       cn(
-                        'flex w-full items-center justify-between gap-3 rounded-lg px-3 py-2.5 text-start text-sm transition-colors',
+                        'flex w-full items-center justify-between gap-3 rounded-lg px-3 py-2.5 text-start text-base transition-colors',
                         loc === locale
                           ? 'bg-[hsl(var(--gold)/0.1)] text-[hsl(var(--gold))]'
                           : 'text-muted-foreground hover:bg-white/5 hover:text-white',

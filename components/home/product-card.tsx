@@ -50,7 +50,7 @@ export function ProductCard( { product, className }: ProductCardProps ) {
           {
             null !== product.discount && 0 < product.discount
               ? (
-                <div className='rounded-full bg-[hsl(var(--rose))] px-2 py-0.5 text-xs font-bold text-white shadow-lg'>
+                <div className='rounded-full bg-[hsl(var(--rose))] px-2.5 py-1 text-sm font-bold text-white shadow-lg'>
                   -{product.discount}%
                 </div>
               )
@@ -60,7 +60,7 @@ export function ProductCard( { product, className }: ProductCardProps ) {
           {
             7 >= days
               ? (
-                <div className='rounded-full bg-[hsl(var(--gold))] px-2 py-0.5 text-xs font-bold text-black shadow-lg'>
+                <div className='rounded-full bg-[hsl(var(--gold))] px-2.5 py-1 text-sm font-bold text-black shadow-lg'>
                   NEW
                 </div>
               )
@@ -84,7 +84,7 @@ export function ProductCard( { product, className }: ProductCardProps ) {
         {/* Quick add button - visible on hover */}
         <div className='absolute inset-x-3 bottom-3 translate-y-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100'>
           <button
-            className='flex w-full items-center justify-center gap-2 rounded-xl bg-white py-2.5 text-sm font-semibold text-black transition-colors hover:bg-[hsl(var(--gold))]'
+            className='flex w-full items-center justify-center gap-2 rounded-xl bg-white py-2.5 text-base font-semibold text-black transition-colors hover:bg-[hsl(var(--gold))]'
             onClick={
               ( event ) => {
                 event.preventDefault()
@@ -101,17 +101,17 @@ export function ProductCard( { product, className }: ProductCardProps ) {
       {/* Product info */}
       <div className='mt-3 flex flex-col gap-1'>
         {/* Brand */}
-        <span className='text-xs font-medium uppercase tracking-wider text-muted-foreground'>
+        <span className='text-sm font-medium uppercase tracking-wider text-muted-foreground'>
           {product.brand}
         </span>
 
         {/* Title */}
-        <h3 className='line-clamp-1 text-sm font-medium text-foreground transition-colors group-hover:text-[hsl(var(--gold))]'>
+        <h3 className='line-clamp-1 text-base font-medium text-foreground transition-colors group-hover:text-[hsl(var(--gold))]'>
           {product.title}
         </h3>
 
         {/* Size */}
-        <span className='text-xs text-muted-foreground'>
+        <span className='text-sm text-muted-foreground'>
           Size {product.size}
         </span>
 
@@ -123,7 +123,7 @@ export function ProductCard( { product, className }: ProductCardProps ) {
           {
             null !== product.originalPrice && 0 < product.originalPrice
               ? (
-                <span className='text-sm text-muted-foreground line-through'>
+                <span className='text-base text-muted-foreground line-through'>
                   {t( 'currency' )}{product.originalPrice}
                 </span>
               )

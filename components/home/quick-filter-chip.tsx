@@ -52,7 +52,7 @@ export function QuickFilterChip( { filter, className }: QuickFilterChipProps ) {
               <div
                 className={
                   cn(
-                    'absolute start-2 top-2 flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-bold text-white shadow-lg',
+                    'absolute start-2 top-2 flex items-center gap-1 rounded-full px-2.5 py-1 text-sm font-bold text-white shadow-lg',
                     'sale' === filter.type
                       ? 'bg-gradient-to-r from-[hsl(var(--rose))] to-[hsl(350,80%,55%)]'
                       : 'bg-gradient-to-r from-emerald-500 to-emerald-600',

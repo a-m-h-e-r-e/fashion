@@ -75,7 +75,7 @@ export function DesktopHeader( {
             <span className='font-sans text-xl font-bold tracking-wide text-white'>
               Light Fashion
             </span>
-            <span className='text-[10px] font-medium text-muted-foreground'>
+            <span className='text-sm font-medium text-muted-foreground'>
               +251932683215
             </span>
           </div>
@@ -91,7 +91,7 @@ export function DesktopHeader( {
                 <a
                   className={
                     cn(
-                      'relative px-5 py-2 text-sm font-medium tracking-wide transition-colors',
+                      'relative px-5 py-2 text-base font-medium tracking-wide transition-colors',
                       isActive
                         ? 'text-[hsl(var(--gold))]'
                         : 'text-muted-foreground hover:text-white',
@@ -139,7 +139,7 @@ export function DesktopHeader( {
             type='button'
           >
             <ShoppingBag className='h-5 w-5' />
-            <span className='absolute -end-0.5 -top-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-[hsl(var(--gold))] text-xs font-bold text-black'>
+            <span className='absolute -end-0.5 -top-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-[hsl(var(--gold))] text-sm font-bold text-black'>
               2
             </span>
           </button>

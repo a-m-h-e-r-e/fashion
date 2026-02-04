@@ -87,6 +87,7 @@
     scroll-behavior: smooth;
     -webkit-tap-highlight-color: transparent;
     font-family: var(--font-sans);
+    font-size: 16px;
   }
 
   body {
