@@ -6,6 +6,7 @@ import { Home, Heart, MessageCircle, User, ShoppingBag, Search } from 'lucide-re
 import type { NavItemId } from '@/lib/types'
 import { cn } from '@/lib/utils'
 import { LanguageSwitcher } from '@/components/ui/language-switcher'
+import { ThemeToggle } from '@/components/ui/theme-toggle'
 
 interface DesktopHeaderProps {
   activeItem? : NavItemId
@@ -145,6 +146,9 @@ export function DesktopHeader( {
 
           {/* Divider */}
           <div className='mx-2 h-6 w-px bg-white/10' />
+
+          {/* Theme toggle */}
+          <ThemeToggle />
 
           {/* Language switcher */}
           <LanguageSwitcher />
