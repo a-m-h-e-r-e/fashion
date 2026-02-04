@@ -31,7 +31,7 @@ export function SectionHeader( {
         hasSeeAllLink
           ? (
             <a
-              className='group flex items-center gap-1 text-sm font-medium text-[hsl(var(--gold))] transition-colors hover:text-[hsl(var(--gold-light))]'
+              className='group flex items-center gap-1 text-base font-medium text-[hsl(var(--gold))] transition-colors hover:text-[hsl(var(--gold-light))]'
               href={ href }
             >
               {t( 'common.seeAll' )}

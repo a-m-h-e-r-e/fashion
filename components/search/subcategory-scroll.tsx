@@ -71,14 +71,14 @@ export function SubcategoryScroll( {
                     <p
                       className={
                         cn(
-                          'text-xs font-medium sm:text-sm',
+                          'text-sm font-medium sm:text-base',
                           isActive ? 'text-white' : 'text-muted-foreground',
                         )
                       }
                     >
                       {t( translationKey )}
                     </p>
-                    <p className='text-[10px] text-muted-foreground sm:text-xs'>
+                    <p className='text-sm text-muted-foreground sm:text-base'>
                       {subcat.itemCount.toLocaleString()}
                     </p>
                   </div>

@@ -33,7 +33,7 @@ export function ProductGrid( {
           {t( titleKey )}
         </h2>
         <a
-          className='flex items-center gap-1 text-sm text-amber-500 transition-colors hover:text-amber-400'
+          className='flex items-center gap-1 text-base text-amber-500 transition-colors hover:text-amber-400'
           href={ href }
         >
           {t( 'common.more' )}

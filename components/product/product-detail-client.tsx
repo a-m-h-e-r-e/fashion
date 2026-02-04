@@ -170,7 +170,7 @@ export function ProductDetailClient( { product, relatedProducts }: ProductDetail
               {
                 product.discount
                   ? (
-                    <div className='absolute start-4 top-4 rounded-full bg-[hsl(var(--rose))] px-3 py-1.5 text-sm font-bold text-white lg:start-6 lg:top-6'>
+                    <div className='absolute start-4 top-4 rounded-full bg-[hsl(var(--rose))] px-3 py-1.5 text-base font-bold text-white lg:start-6 lg:top-6'>
                       -{product.discount}%
                     </div>
                   )
@@ -254,7 +254,7 @@ export function ProductDetailClient( { product, relatedProducts }: ProductDetail
           {/* Product Info */}
           <div className='px-4 pt-6 lg:px-0 lg:pt-0'>
             {/* Brand */}
-            <p className='text-sm font-medium uppercase tracking-wider text-[hsl(var(--gold))]'>
+            <p className='text-base font-medium uppercase tracking-wider text-[hsl(var(--gold))]'>
               {product.brand}
             </p>
 
@@ -285,7 +285,7 @@ export function ProductDetailClient( { product, relatedProducts }: ProductDetail
                 <div className='flex h-5 w-5 items-center justify-center rounded-full bg-green-500/20'>
                   <Check className='h-3 w-3 text-green-400' />
                 </div>
-                <span className='text-sm text-muted-foreground'>
+                <span className='text-base text-muted-foreground'>
                   {
                     product.discount && 50 < product.discount
                       ? 'Very good condition'
@@ -293,7 +293,7 @@ export function ProductDetailClient( { product, relatedProducts }: ProductDetail
                   }
                 </span>
               </div>
-              <span className='text-sm text-muted-foreground'>
+              <span className='text-base text-muted-foreground'>
                 Listed {formatDate( product.lastUpdated )}
               </span>
             </div>
@@ -302,7 +302,7 @@ export function ProductDetailClient( { product, relatedProducts }: ProductDetail
             <div className='mt-6'>
               <div className='mb-3 flex items-center justify-between'>
                 <span className='font-medium text-white'>Size</span>
-                <button className='text-sm text-[hsl(var(--gold))] underline-offset-2 hover:underline' type='button'>
+                <button className='text-base text-[hsl(var(--gold))] underline-offset-2 hover:underline' type='button'>
                   Size guide
                 </button>
               </div>
@@ -311,7 +311,7 @@ export function ProductDetailClient( { product, relatedProducts }: ProductDetail
                   availableSizes.map( ( size ) => (
                     <button
                       className={
-                        `min-w-[3rem] rounded-lg border px-4 py-2.5 text-sm font-medium transition-all ${
+                        `min-w-[3rem] rounded-lg border px-4 py-2.5 text-base font-medium transition-all ${
                           size === selectedSize
                             ? 'border-[hsl(var(--gold))] bg-[hsl(var(--gold))]/10 text-[hsl(var(--gold))]'
                             : size === product.size
@@ -333,7 +333,7 @@ export function ProductDetailClient( { product, relatedProducts }: ProductDetail
                   ) )
                 }
               </div>
-              <p className='mt-2 text-xs text-muted-foreground'>
+              <p className='mt-2 text-sm text-muted-foreground'>
                 Only size {product.size} available
               </p>
             </div>
@@ -359,7 +359,7 @@ export function ProductDetailClient( { product, relatedProducts }: ProductDetail
                         ) )
                       }
                     </div>
-                    <span className='text-sm text-muted-foreground'>(127 reviews)</span>
+                    <span className='text-base text-muted-foreground'>(127 reviews)</span>
                   </div>
                 </div>
                 <button
@@ -376,15 +376,15 @@ export function ProductDetailClient( { product, relatedProducts }: ProductDetail
               <div className='flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 p-3'>
                 <Shield className='h-5 w-5 text-[hsl(var(--gold))]' />
                 <div>
-                  <p className='text-sm font-medium text-white'>Buyer Protection</p>
-                  <p className='text-xs text-muted-foreground'>Full refund if item not received</p>
+                  <p className='text-base font-medium text-white'>Buyer Protection</p>
+                  <p className='text-sm text-muted-foreground'>Full refund if item not received</p>
                 </div>
               </div>
               <div className='flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 p-3'>
                 <Truck className='h-5 w-5 text-[hsl(var(--gold))]' />
                 <div>
-                  <p className='text-sm font-medium text-white'>Fast Shipping</p>
-                  <p className='text-xs text-muted-foreground'>Usually ships in 1-2 days</p>
+                  <p className='text-base font-medium text-white'>Fast Shipping</p>
+                  <p className='text-sm text-muted-foreground'>Usually ships in 1-2 days</p>
                 </div>
               </div>
             </div>
@@ -440,7 +440,7 @@ export function ProductDetailClient( { product, relatedProducts }: ProductDetail
                             {
                               related.discount
                                 ? (
-                                  <div className='absolute end-2 top-2 rounded-full bg-[hsl(var(--rose))] px-2 py-0.5 text-xs font-bold text-white'>
+                                  <div className='absolute end-2 top-2 rounded-full bg-[hsl(var(--rose))] px-2.5 py-1 text-sm font-bold text-white'>
                                     -{related.discount}%
                                   </div>
                                 )
@@ -455,14 +455,14 @@ export function ProductDetailClient( { product, relatedProducts }: ProductDetail
                               {
                                 related.originalPrice
                                   ? (
-                                    <span className='text-sm text-muted-foreground line-through'>
+                                    <span className='text-base text-muted-foreground line-through'>
                                       {related.originalPrice} zł
                                     </span>
                                   )
                                   : null
                               }
                             </div>
-                            <p className='mt-1 line-clamp-1 text-sm text-muted-foreground'>
+                            <p className='mt-1 line-clamp-1 text-base text-muted-foreground'>
                               {related.brand}
                             </p>
                           </div>

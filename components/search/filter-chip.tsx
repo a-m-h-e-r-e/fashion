@@ -43,7 +43,7 @@ export function FilterChip( {
       <button
         className={
           cn(
-            'flex h-9 items-center gap-1.5 rounded-full border px-4 text-sm font-medium transition-colors',
+            'flex h-9 items-center gap-1.5 rounded-full border px-4 text-base font-medium transition-colors',
             hasSelection
               ? 'border-[hsl(var(--gold))] bg-[hsl(var(--gold)/0.1)] text-[hsl(var(--gold))]'
               : 'border-white/20 bg-white/5 text-white hover:border-white/30',

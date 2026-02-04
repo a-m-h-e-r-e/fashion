@@ -39,7 +39,7 @@ export function SearchProductCard( { product, className }: SearchProductCardProp
 
         {/* User avatar */}
         <div className='absolute bottom-2 start-2 flex h-8 w-8 items-center justify-center rounded-full border-2 border-white/20 bg-white/10 backdrop-blur-sm'>
-          <span className='text-xs font-medium text-white'>
+          <span className='text-sm font-medium text-white'>
             {product.brand.charAt( 0 )}
           </span>
         </div>
@@ -55,7 +55,7 @@ export function SearchProductCard( { product, className }: SearchProductCardProp
           {
             product.originalPrice
               ? (
-                <span className='text-sm text-muted-foreground line-through'>
+                <span className='text-base text-muted-foreground line-through'>
                   {product.originalPrice} zł
                 </span>
               )
@@ -64,7 +64,7 @@ export function SearchProductCard( { product, className }: SearchProductCardProp
         </div>
 
         {/* Condition */}
-        <p className='mt-0.5 text-sm text-muted-foreground'>
+        <p className='mt-0.5 text-base text-muted-foreground'>
           {
             product.discount && 50 < product.discount
               ? 'Very good'
@@ -73,7 +73,7 @@ export function SearchProductCard( { product, className }: SearchProductCardProp
         </p>
 
         {/* Title */}
-        <p className='mt-1 line-clamp-2 text-sm text-white'>
+        <p className='mt-1 line-clamp-2 text-base text-white'>
           {product.brand}, {product.title}, size {product.size}
         </p>
       </div>

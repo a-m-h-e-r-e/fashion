@@ -127,7 +127,7 @@ export function FilterBottomSheet( {
           </button>
           <h2 className='text-lg font-semibold text-white'>{t( filter.name )}</h2>
           <button
-            className='text-sm font-medium text-[hsl(var(--gold))] hover:underline'
+            className='text-base font-medium text-[hsl(var(--gold))] hover:underline'
             onClick={ handleClear }
             type='button'
           >
@@ -143,7 +143,7 @@ export function FilterBottomSheet( {
                 <div className='relative'>
                   <Search className='absolute start-3 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground' />
                   <input
-                    className='h-11 w-full rounded-xl border border-white/10 bg-white/5 pe-4 ps-10 text-sm text-white placeholder:text-muted-foreground focus:border-[hsl(var(--gold)/0.5)] focus:outline-none'
+                    className='h-11 w-full rounded-xl border border-white/10 bg-white/5 pe-4 ps-10 text-base text-white placeholder:text-muted-foreground focus:border-[hsl(var(--gold)/0.5)] focus:outline-none'
                     onChange={
                       ( e ) => {
                         setSearchQuery( e.target.value )
@@ -187,7 +187,7 @@ export function FilterBottomSheet( {
                     {option.label}
                   </span>
                   <div className='flex items-center gap-3'>
-                    <span className='text-sm text-muted-foreground'>
+                    <span className='text-base text-muted-foreground'>
                       {option.count.toLocaleString()}
                     </span>
                     <div
@@ -239,7 +239,7 @@ export function FilterBottomSheet( {
                   <h2 className='text-lg font-semibold text-white'>{t( filter.name )}</h2>
                   <div className='flex items-center gap-2'>
                     <button
-                      className='text-sm font-medium text-[hsl(var(--gold))] hover:underline'
+                      className='text-base font-medium text-[hsl(var(--gold))] hover:underline'
                       onClick={ handleClear }
                       type='button'
                     >
@@ -299,7 +299,7 @@ export function FilterBottomSheet( {
                           <span
                             className={
                               cn(
-                                'text-sm',
+                                'text-base',
                                 isSelected ? 'font-medium text-white' : 'text-muted-foreground',
                               )
                             }
@@ -307,7 +307,7 @@ export function FilterBottomSheet( {
                             {option.label}
                           </span>
                           <div className='flex items-center gap-3'>
-                            <span className='text-xs text-muted-foreground'>
+                            <span className='text-sm text-muted-foreground'>
                               {option.count.toLocaleString()}
                             </span>
                             <div
@@ -332,7 +332,7 @@ export function FilterBottomSheet( {
                 {/* Apply button */}
                 <div className='border-t border-white/10 p-4'>
                   <button
-                    className='h-11 w-full rounded-xl bg-[hsl(var(--gold))] text-sm font-semibold text-black transition-opacity hover:opacity-90'
+                    className='h-11 w-full rounded-xl bg-[hsl(var(--gold))] text-base font-semibold text-black transition-opacity hover:opacity-90'
                     onClick={ handleApply }
                     type='button'
                   >
