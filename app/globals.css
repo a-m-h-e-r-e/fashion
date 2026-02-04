@@ -4,26 +4,26 @@
 
 @layer base {
   :root {
-    /* Light: warm off-white, soft contrast */
+    /* Light: warm off-white, high contrast for readability (WCAG AA+) */
     --background: 40 12% 98%;
-    --foreground: 240 6% 10%;
+    --foreground: 240 8% 8%;
     --card: 0 0% 100%;
-    --card-foreground: 240 6% 10%;
+    --card-foreground: 240 8% 8%;
     --popover: 0 0% 100%;
-    --popover-foreground: 240 6% 10%;
-    --primary: 88 35% 28%;
+    --popover-foreground: 240 8% 8%;
+    --primary: 88 38% 26%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 40 10% 94%;
-    --secondary-foreground: 240 6% 10%;
-    --muted: 40 8% 94%;
-    --muted-foreground: 240 4% 46%;
-    --accent: 88 25% 92%;
-    --accent-foreground: 88 35% 22%;
+    --secondary: 40 10% 93%;
+    --secondary-foreground: 240 8% 8%;
+    --muted: 40 8% 93%;
+    --muted-foreground: 240 5% 38%;
+    --accent: 88 22% 92%;
+    --accent-foreground: 88 38% 22%;
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 98%;
-    --border: 40 8% 88%;
-    --input: 40 8% 88%;
-    --ring: 88 40% 45%;
+    --border: 40 7% 86%;
+    --input: 40 7% 86%;
+    --ring: 88 38% 42%;
     --chart-1: 88 45% 48%;
     --chart-2: 95 28% 52%;
     --chart-3: 85 25% 60%;
@@ -188,12 +188,12 @@
 
   /* Outline button (Light Fashion: grey-green border) */
   .btn-outline {
-    @apply relative rounded-full border-2 px-8 py-3 font-medium text-white transition-all duration-300;
+    @apply relative rounded-full border-2 px-8 py-3 font-medium text-foreground transition-all duration-300 dark:text-white;
     border-color: hsl(var(--border) / 0.8);
   }
 
   .btn-outline:hover {
-    @apply bg-white/10;
+    @apply bg-black/5 dark:bg-white/10;
     border-color: hsl(var(--border));
   }
 
