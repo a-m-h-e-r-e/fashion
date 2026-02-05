@@ -95,6 +95,12 @@
     font-family: var(--font-sans);
   }
 
+  /* Heavier weight for small text (readability) */
+  .text-xs,
+  .text-sm {
+    font-weight: 500;
+  }
+
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-serif);
   }

@@ -21,7 +21,13 @@ const brands = [
 
 export function BrandsMarquee( { className }: BrandsMarqueeProps ) {
   return (
-    <div className={ cn( 'relative overflow-hidden border-y border-white/10 bg-black/30 py-4', className ) }>
+    <div
+      className={ cn(
+        'relative overflow-hidden border-y py-4',
+        'border-border bg-muted/50 dark:border-white/10 dark:bg-black/30',
+        className,
+      ) }
+    >
       {/* Fade edges */}
       <div className='pointer-events-none absolute inset-y-0 start-0 z-10 w-32 bg-gradient-to-r from-background to-transparent' />
       <div className='pointer-events-none absolute inset-y-0 end-0 z-10 w-32 bg-gradient-to-l from-background to-transparent' />
@@ -36,10 +42,15 @@ export function BrandsMarquee( { className }: BrandsMarqueeProps ) {
                 className='flex items-center px-8 lg:px-12'
                 key={ `first-${ index }` }
               >
-                <span className='whitespace-nowrap font-serif text-lg font-medium tracking-widest text-white/60 transition-colors hover:text-[hsl(var(--gold))] lg:text-xl'>
+                <span
+                  className={
+                    'whitespace-nowrap font-serif text-lg font-medium tracking-widest transition-colors hover:text-[hsl(var(--gold))] lg:text-xl '
+                    + 'text-muted-foreground dark:text-white/60'
+                  }
+                >
                   {brand}
                 </span>
-                <span className='mx-8 text-[hsl(var(--gold)/0.4)] lg:mx-12'>✦</span>
+                <span className='mx-8 text-[hsl(var(--gold)/0.6)] lg:mx-12 dark:text-[hsl(var(--gold)/0.4)]'>✦</span>
               </div>
             ) )
           }
@@ -52,10 +63,15 @@ export function BrandsMarquee( { className }: BrandsMarqueeProps ) {
                 className='flex items-center px-8 lg:px-12'
                 key={ `second-${ index }` }
               >
-                <span className='whitespace-nowrap font-serif text-lg font-medium tracking-widest text-white/60 transition-colors hover:text-[hsl(var(--gold))] lg:text-xl'>
+                <span
+                  className={
+                    'whitespace-nowrap font-serif text-lg font-medium tracking-widest transition-colors hover:text-[hsl(var(--gold))] lg:text-xl '
+                    + 'text-muted-foreground dark:text-white/60'
+                  }
+                >
                   {brand}
                 </span>
-                <span className='mx-8 text-[hsl(var(--gold)/0.4)] lg:mx-12'>✦</span>
+                <span className='mx-8 text-[hsl(var(--gold)/0.6)] lg:mx-12 dark:text-[hsl(var(--gold)/0.4)]'>✦</span>
               </div>
             ) )
           }
