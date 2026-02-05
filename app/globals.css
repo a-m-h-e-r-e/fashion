@@ -39,8 +39,8 @@
     --rose-light: 95 20% 66%;
     
     /* Font families */
-    --font-serif: var(--font-playfair), Georgia, serif;
-    --font-sans: var(--font-dm-sans), system-ui, sans-serif;
+    --font-serif: var(--font-cormorant), Georgia, serif;
+    --font-sans: var(--font-plus-jakarta), system-ui, sans-serif;
   }
 
   .dark {
@@ -93,16 +93,18 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-family: var(--font-sans);
+    font-weight: 500;
   }
 
   /* Heavier weight for small text (readability) */
   .text-xs,
   .text-sm {
-    font-weight: 500;
+    font-weight: 600;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-serif);
+    font-weight: 600;
   }
 
   /* Custom scrollbar for dark mode */

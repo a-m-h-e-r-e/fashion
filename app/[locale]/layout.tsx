@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 // eslint-disable-next-line camelcase
-import { Playfair_Display, DM_Sans } from 'next/font/google'
+import { Cormorant_Garamond, Plus_Jakarta_Sans } from 'next/font/google'
 import { notFound } from 'next/navigation'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages, setRequestLocale } from 'next-intl/server'
@@ -12,15 +12,15 @@ import { ThemeScript } from '@/components/providers/theme-script'
 import '../globals.css'
 
 /* eslint-disable new-cap */
-const playfair = Playfair_Display( {
+const cormorant = Cormorant_Garamond( {
   subsets  : [ 'latin' ],
-  variable : '--font-playfair',
-  weight   : [ '400', '500', '600', '700', '800', '900' ],
+  variable : '--font-cormorant',
+  weight   : [ '300', '400', '500', '600', '700' ],
 } )
 
-const dmSans = DM_Sans( {
+const plusJakarta = Plus_Jakarta_Sans( {
   subsets  : [ 'latin' ],
-  variable : '--font-dm-sans',
+  variable : '--font-plus-jakarta',
   weight   : [ '400', '500', '600', '700' ],
 } )
 
@@ -59,7 +59,7 @@ export default async function LocaleLayout( {
 
   return (
     <html dir={ dir } lang={ locale } suppressHydrationWarning>
-      <body className={ `${ playfair.variable } ${ dmSans.variable } font-sans min-h-screen` }>
+      <body className={ `${ cormorant.variable } ${ plusJakarta.variable } font-sans min-h-screen` }>
         <ThemeScript />
         <ThemeProvider>
           <MSWProvider>
