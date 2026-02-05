@@ -47,7 +47,7 @@ export function SearchDesktopHeader( {
             <span className='font-sans text-xl font-bold tracking-wide text-white'>
               Light Fashion
             </span>
-            <span className='text-[10px] font-medium text-muted-foreground'>
+            <span className='text-sm font-medium text-muted-foreground'>
               +251932683215
             </span>
           </div>
@@ -57,7 +57,7 @@ export function SearchDesktopHeader( {
         <div className='relative max-w-xl flex-1'>
           <Search className='absolute start-4 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground' />
           <input
-            className='h-12 w-full rounded-2xl border border-white/10 bg-white/5 pe-4 ps-12 text-sm text-white placeholder:text-muted-foreground focus:border-[hsl(var(--gold)/0.5)] focus:outline-none focus:ring-1 focus:ring-[hsl(var(--gold)/0.5)]'
+            className='h-12 w-full rounded-2xl border border-white/10 bg-white/5 pe-4 ps-12 text-base text-white placeholder:text-muted-foreground focus:border-[hsl(var(--gold)/0.5)] focus:outline-none focus:ring-1 focus:ring-[hsl(var(--gold)/0.5)]'
             placeholder={ `${ t( 'placeholder' ) } ${ categoryName }` }
             type='text'
           />
@@ -79,7 +79,7 @@ export function SearchDesktopHeader( {
             type='button'
           >
             <ShoppingBag className='h-5 w-5' />
-            <span className='absolute -end-0.5 -top-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-[hsl(var(--gold))] text-xs font-bold text-black'>
+            <span className='absolute -end-0.5 -top-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-[hsl(var(--gold))] text-sm font-bold text-black'>
               2
             </span>
           </button>

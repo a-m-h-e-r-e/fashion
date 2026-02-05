@@ -53,12 +53,12 @@ export function CategoryCard( { category, className }: CategoryCardProps ) {
         {/* Content overlay */}
         <div className='absolute inset-x-0 bottom-0 p-3'>
           {/* Category name */}
-          <h3 className='font-serif text-sm font-semibold text-white sm:text-base'>
+          <h3 className='font-serif text-base font-semibold text-white sm:text-lg'>
             {t( category.name )}
           </h3>
 
           {/* Item count */}
-          <p className='mt-0.5 text-xs text-white/70'>
+          <p className='mt-0.5 text-sm text-white/70'>
             {displayCount( category.itemCount )} items
           </p>
         </div>

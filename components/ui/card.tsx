@@ -52,7 +52,7 @@ const CardDescription = React.forwardRef<
   React.HTMLAttributes<HTMLDivElement>
 >( ( { className, ...props }, ref ) => (
   <div
-    className={ cn( 'text-sm text-muted-foreground', className ) }
+    className={ cn( 'text-base text-muted-foreground', className ) }
     ref={ ref }
     { ...props }
   />

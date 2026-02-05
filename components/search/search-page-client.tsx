@@ -175,7 +175,7 @@ export function SearchPageClient( {
               <h2 className='font-serif text-lg font-semibold text-white'>
                 {categoryName}
               </h2>
-              <span className='text-sm text-muted-foreground'>
+              <span className='text-base text-muted-foreground'>
                 {totalProducts.toLocaleString()} items
               </span>
             </div>
@@ -201,7 +201,7 @@ export function SearchPageClient( {
               ? (
                 <div className='mt-8 flex justify-center'>
                   <button
-                    className='rounded-full border border-white/20 px-8 py-3 text-sm font-medium text-white transition-colors hover:bg-white/5'
+                    className='rounded-full border border-white/20 px-8 py-3 text-base font-medium text-white transition-colors hover:bg-white/5'
                     type='button'
                   >
                     Load more
