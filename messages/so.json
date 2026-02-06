@@ -127,5 +127,18 @@
     "apply": "Codso",
     "searchPlaceholder": "Maxaad raadineysaa?",
     "notifyUpdates": "Ii soo sheeg wixii cusub"
+  },
+  "footer": {
+    "shop": "Iibso",
+    "help": "Caawimaad",
+    "contact": "Nala soo xiriir",
+    "faq": "Su'aalaha",
+    "shipping": "Rarida iyo soo celinta",
+    "phone": "Telefoonka",
+    "email": "Iimaylka",
+    "tagline": "Fashin la soo xulay oo ka mid ah brands. Luxurious sustainable.",
+    "copyright": "© {year} Light Fashion. Dhammaan xuquuqaha waa la ilaaliyey.",
+    "privacy": "Siyaasadda Qarsoonnida",
+    "terms": "Shuruudaha Adeegga"
   }
 }
