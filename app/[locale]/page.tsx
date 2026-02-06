@@ -2,6 +2,7 @@ import { setRequestLocale } from 'next-intl/server'
 import {
   CategoryGrid,
   DesktopHeader,
+  Footer,
   HeroSection,
   BrandsMarquee,
   SizeFilterGrid,
@@ -92,9 +93,9 @@ export default async function Home( { params }: { params: Promise<{ locale: stri
           </div>
         </section>
 
-        {/* Footer spacer for desktop */}
-        <div className='hidden h-16 lg:block' />
       </main>
+
+      <Footer />
 
       {/* Bottom Navigation - Hidden on desktop */}
       <BottomNavigation activeItem='home' />
