@@ -1,5 +1,6 @@
 export { BottomNavigation } from './bottom-navigation'
 export { BrandsMarquee } from './brands-marquee'
+export { Footer } from './footer'
 export { CategoryCard } from './category-card'
 export { CategoryGrid } from './category-grid'
 export { DesktopHeader } from './desktop-header'

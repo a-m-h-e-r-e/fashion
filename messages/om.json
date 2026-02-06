@@ -127,5 +127,18 @@
     "apply": "Fayyadami",
     "searchPlaceholder": "Maal barbaadaa jirta?",
     "notifyUpdates": "Waa'ee haaromsa na beeksisi"
+  },
+  "footer": {
+    "shop": "Bitadhuu",
+    "help": "Gargaarsa",
+    "contact": "Nu qunnamaa",
+    "faq": "Gaaffilee",
+    "shipping": "Fe'aa fi deebii",
+    "phone": "Bilbilaa",
+    "email": "Email",
+    "tagline": "Faashinni daree irraa filatame. Luxurious sustainable.",
+    "copyright": "© {year} Light Fashion. Mirga hundi ni eegama.",
+    "privacy": "Seraa Piravaasii",
+    "terms": "Hayyama Tajaajilaa"
   }
 }
