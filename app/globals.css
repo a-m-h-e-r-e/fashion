@@ -39,8 +39,8 @@
     --rose-light: 95 20% 66%;
     
     /* Font families */
-    --font-serif: var(--font-cormorant), Georgia, serif;
-    --font-sans: var(--font-plus-jakarta), system-ui, sans-serif;
+    --font-serif: var(--font-fraunces), Georgia, serif;
+    --font-sans: var(--font-manrope), system-ui, sans-serif;
   }
 
   .dark {
