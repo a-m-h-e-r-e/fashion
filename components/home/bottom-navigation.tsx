@@ -93,7 +93,7 @@ export function BottomNavigation( {
                 <span
                   className={
                     cn(
-                      'relative text-[10px] font-medium',
+                      'relative text-sm font-medium',
                       isActive ? 'text-[hsl(var(--gold))]' : '',
                     )
                   }

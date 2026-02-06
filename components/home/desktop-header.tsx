@@ -58,24 +58,24 @@ export function DesktopHeader( {
       {/* Glass background */}
       <div className='absolute inset-0 border-b border-white/10 bg-background/80 backdrop-blur-xl' />
 
-      <div className='relative mx-auto flex h-20 max-w-7xl items-center justify-between px-8'>
+      <div className='relative mx-auto flex h-24 max-w-7xl items-center justify-between px-8'>
         {/* Logo - Light Fashion */}
         <a className='group flex items-center gap-3' href='/'>
-          <div className='relative h-10 w-10 shrink-0 overflow-hidden rounded-full border-2 border-[hsl(var(--border))] shadow-lg transition-transform group-hover:scale-105'>
+          <div className='relative h-12 w-12 shrink-0 overflow-hidden rounded-full border-2 border-[hsl(var(--border))] shadow-lg transition-transform group-hover:scale-105'>
             <Image
               alt='Light Fashion'
               className='object-contain p-0.5'
               fill
               priority
-              sizes='40px'
+              sizes='48px'
               src='/images/light-fashion-logo.png'
             />
           </div>
           <div className='flex flex-col'>
-            <span className='font-sans text-xl font-bold tracking-wide text-white'>
+            <span className='font-sans text-2xl font-bold tracking-wide text-white'>
               Light Fashion
             </span>
-            <span className='text-[10px] font-medium text-muted-foreground'>
+            <span className='text-base font-semibold text-muted-foreground'>
               +251932683215
             </span>
           </div>
@@ -91,7 +91,7 @@ export function DesktopHeader( {
                 <a
                   className={
                     cn(
-                      'relative px-5 py-2 text-sm font-medium tracking-wide transition-colors',
+                      'relative px-5 py-2 text-lg font-semibold tracking-wide transition-colors',
                       isActive
                         ? 'text-[hsl(var(--gold))]'
                         : 'text-muted-foreground hover:text-white',
@@ -119,27 +119,27 @@ export function DesktopHeader( {
         <div className='flex items-center gap-1'>
           {/* Search button */}
           <button
-            className='flex h-10 w-10 items-center justify-center rounded-xl text-muted-foreground transition-colors hover:bg-white/5 hover:text-white'
+            className='flex h-11 w-11 items-center justify-center rounded-xl text-muted-foreground transition-colors hover:bg-white/5 hover:text-white'
             type='button'
           >
-            <Search className='h-5 w-5' />
+            <Search className='h-6 w-6' />
           </button>
 
           {/* Favorites */}
           <button
-            className='flex h-10 w-10 items-center justify-center rounded-xl text-muted-foreground transition-colors hover:bg-white/5 hover:text-white'
+            className='flex h-11 w-11 items-center justify-center rounded-xl text-muted-foreground transition-colors hover:bg-white/5 hover:text-white'
             type='button'
           >
-            <Heart className='h-5 w-5' />
+            <Heart className='h-6 w-6' />
           </button>
 
           {/* Cart */}
           <button
-            className='relative flex h-10 w-10 items-center justify-center rounded-xl text-muted-foreground transition-colors hover:bg-white/5 hover:text-white'
+            className='relative flex h-11 w-11 items-center justify-center rounded-xl text-muted-foreground transition-colors hover:bg-white/5 hover:text-white'
             type='button'
           >
-            <ShoppingBag className='h-5 w-5' />
-            <span className='absolute -end-0.5 -top-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-[hsl(var(--gold))] text-xs font-bold text-black'>
+            <ShoppingBag className='h-6 w-6' />
+            <span className='absolute -end-0.5 -top-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-[hsl(var(--gold))] text-base font-bold text-black'>
               2
             </span>
           </button>
@@ -155,7 +155,7 @@ export function DesktopHeader( {
 
           {/* Profile avatar */}
           <button
-            className='ms-2 flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl border-2 border-white/20 transition-colors hover:border-[hsl(var(--gold)/0.5)]'
+            className='ms-2 flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl border-2 border-white/20 transition-colors hover:border-[hsl(var(--gold)/0.5)]'
             type='button'
           >
             <div className='h-full w-full bg-gradient-to-br from-[hsl(var(--gold)/0.3)] to-[hsl(var(--rose)/0.3)]' />

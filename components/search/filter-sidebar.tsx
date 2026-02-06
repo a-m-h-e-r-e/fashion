@@ -77,13 +77,13 @@ export function FilterSidebar( {
                     type='button'
                   >
                     <div className='flex items-center gap-2'>
-                      <span className='text-sm font-medium text-white'>
+                      <span className='text-base font-medium text-white'>
                         {t( filter.name )}
                       </span>
                       {
                         0 < selectedValues.length
                           ? (
-                            <span className='flex h-5 min-w-5 items-center justify-center rounded-full bg-[hsl(var(--gold))] px-1.5 text-xs font-semibold text-black'>
+                            <span className='flex h-5 min-w-5 items-center justify-center rounded-full bg-[hsl(var(--gold))] px-1.5 text-sm font-semibold text-black'>
                               {selectedValues.length}
                             </span>
                           )
@@ -109,7 +109,7 @@ export function FilterSidebar( {
                                 <div className='relative mb-3'>
                                   <Search className='absolute start-2.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground' />
                                   <input
-                                    className='h-9 w-full rounded-lg border border-white/10 bg-white/5 pe-3 ps-8 text-sm text-white placeholder:text-muted-foreground focus:border-[hsl(var(--gold)/0.5)] focus:outline-none'
+                                    className='h-9 w-full rounded-lg border border-white/10 bg-white/5 pe-3 ps-8 text-base text-white placeholder:text-muted-foreground focus:border-[hsl(var(--gold)/0.5)] focus:outline-none'
                                     onChange={
                                       ( e ) => {
                                         updateSearchQuery( filter.id, e.target.value )
@@ -129,7 +129,7 @@ export function FilterSidebar( {
                             0 < selectedValues.length
                               ? (
                                 <button
-                                  className='mb-2 text-xs font-medium text-[hsl(var(--gold))] hover:underline'
+                                  className='mb-2 text-sm font-medium text-[hsl(var(--gold))] hover:underline'
                                   onClick={
                                     () => {
                                       onClearFilter( filter.id )
@@ -163,7 +163,7 @@ export function FilterSidebar( {
                                     <span
                                       className={
                                         cn(
-                                          'text-sm',
+                                          'text-base',
                                           isSelected ? 'font-medium text-white' : 'text-muted-foreground',
                                         )
                                       }
@@ -171,7 +171,7 @@ export function FilterSidebar( {
                                       {option.label}
                                     </span>
                                     <div className='flex items-center gap-2'>
-                                      <span className='text-xs text-muted-foreground'>
+                                      <span className='text-base text-muted-foreground'>
                                         {option.count.toLocaleString()}
                                       </span>
                                       <div

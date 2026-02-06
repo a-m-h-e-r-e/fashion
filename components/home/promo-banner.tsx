@@ -69,7 +69,7 @@ export function PromoBanner( {
           className={
             cn(
               'mt-1 text-white/80',
-              isCompact ? 'text-xs sm:text-sm' : 'text-sm sm:text-base',
+              isCompact ? 'text-sm sm:text-base' : 'text-base sm:text-lg',
             )
           }
         >
@@ -78,7 +78,7 @@ export function PromoBanner( {
         {
           null !== promo.ctaKey && '' !== promo.ctaKey
             ? (
-              <span className='mt-4 inline-flex w-fit items-center gap-2 rounded-full bg-white px-5 py-2 text-sm font-semibold text-black transition-all group-hover:bg-[hsl(var(--gold))] group-hover:gap-3'>
+              <span className='mt-4 inline-flex w-fit items-center gap-2 rounded-full bg-white px-5 py-2 text-base font-semibold text-black transition-all group-hover:bg-[hsl(var(--gold))] group-hover:gap-3'>
                 {t( promo.ctaKey )}
                 <ArrowRight className='h-4 w-4' />
               </span>

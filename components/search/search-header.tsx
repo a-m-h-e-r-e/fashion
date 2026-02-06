@@ -42,7 +42,7 @@ export function SearchHeader( {
         <div className='relative flex-1'>
           <Search className='absolute start-3 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground' />
           <input
-            className='h-10 w-full rounded-xl border border-white/10 bg-white/5 pe-4 ps-10 text-sm text-white placeholder:text-muted-foreground focus:border-[hsl(var(--gold)/0.5)] focus:outline-none focus:ring-1 focus:ring-[hsl(var(--gold)/0.5)]'
+            className='h-10 w-full rounded-xl border border-white/10 bg-white/5 pe-4 ps-10 text-base text-white placeholder:text-muted-foreground focus:border-[hsl(var(--gold)/0.5)] focus:outline-none focus:ring-1 focus:ring-[hsl(var(--gold)/0.5)]'
             placeholder={ `${ t( 'placeholder' ) } ${ categoryName }` }
             type='text'
           />
@@ -52,7 +52,7 @@ export function SearchHeader( {
         <button
           className={
             cn(
-              'relative flex h-10 shrink-0 items-center gap-2 rounded-xl px-4 text-sm font-medium transition-colors',
+              'relative flex h-10 shrink-0 items-center gap-2 rounded-xl px-4 text-base font-medium transition-colors',
               hasFilters
                 ? 'bg-[hsl(var(--gold))] text-black'
                 : 'text-[hsl(var(--gold))] hover:bg-white/5',
