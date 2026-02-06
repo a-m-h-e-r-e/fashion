@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 // eslint-disable-next-line camelcase
-import { Cormorant_Garamond, Plus_Jakarta_Sans } from 'next/font/google'
+import { Fraunces, Manrope } from 'next/font/google'
 import { notFound } from 'next/navigation'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages, setRequestLocale } from 'next-intl/server'
@@ -12,15 +12,15 @@ import { ThemeScript } from '@/components/providers/theme-script'
 import '../globals.css'
 
 /* eslint-disable new-cap */
-const cormorant = Cormorant_Garamond( {
+const fraunces = Fraunces( {
   subsets  : [ 'latin' ],
-  variable : '--font-cormorant',
-  weight   : [ '300', '400', '500', '600', '700' ],
+  variable : '--font-fraunces',
+  weight   : [ '400', '500', '600', '700' ],
 } )
 
-const plusJakarta = Plus_Jakarta_Sans( {
+const manrope = Manrope( {
   subsets  : [ 'latin' ],
-  variable : '--font-plus-jakarta',
+  variable : '--font-manrope',
   weight   : [ '400', '500', '600', '700' ],
 } )
 
@@ -59,7 +59,7 @@ export default async function LocaleLayout( {
 
   return (
     <html dir={ dir } lang={ locale } suppressHydrationWarning>
-      <body className={ `${ cormorant.variable } ${ plusJakarta.variable } font-sans min-h-screen` }>
+      <body className={ `${ fraunces.variable } ${ manrope.variable } font-sans min-h-screen` }>
         <ThemeScript />
         <ThemeProvider>
           <MSWProvider>
