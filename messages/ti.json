@@ -102,7 +102,9 @@
     "bargainTitle": "ናይ ሕሱር ዋጋ ድልየትኩም ጀምሩ!",
     "premiumTitle": "ፕሪሚየም ስታይል ብጽቡቕ ዋጋ",
     "lastDays": "ዝሓለፈ {days} መዓልታት",
-    "currency": "$"
+    "currency": "$",
+    "quickAdd": "ቅልጡፍ ወስኽ",
+    "sizeLabel": "ዓቐን {size}"
   },
   "nav": {
     "home": "ገዛ",
@@ -112,7 +114,8 @@
     "profile": "ፕሮፋይል"
   },
   "sizes": {
-    "title": "ብመጠን ግዙኡ"
+    "title": "ብመጠን ግዙኡ",
+    "itemsCount": "{count}+ ኣቕሑ"
   },
   "settings": {
     "language": "ቋንቋ"
