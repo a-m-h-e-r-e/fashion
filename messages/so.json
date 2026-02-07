@@ -102,7 +102,9 @@
     "bargainTitle": "Bilow raadintaada qiimo jaban!",
     "premiumTitle": "Qaab Sare Qiimo Fiican",
     "lastDays": "{days} maalmood ugu dambeeyay",
-    "currency": "$"
+    "currency": "$",
+    "quickAdd": "Ku dar degdeg",
+    "sizeLabel": "Cabbirka {size}"
   },
   "nav": {
     "home": "Guriga",
@@ -112,7 +114,8 @@
     "profile": "Bogga shaqsiga"
   },
   "sizes": {
-    "title": "U iibso cabbirka"
+    "title": "U iibso cabbirka",
+    "itemsCount": "{count}+ alaab"
   },
   "settings": {
     "language": "Luuqad"

@@ -93,7 +93,7 @@ export function ProductCard( { product, className }: ProductCardProps ) {
             type='button'
           >
             <ShoppingBag className='h-4 w-4' />
-            Quick Add
+            {t( 'quickAdd' )}
           </button>
         </div>
       </div>
@@ -112,7 +112,7 @@ export function ProductCard( { product, className }: ProductCardProps ) {
 
         {/* Size */}
         <span className='text-sm text-muted-foreground'>
-          Size {product.size}
+          {t( 'sizeLabel', { size: product.size } )}
         </span>
 
         {/* Price row */}

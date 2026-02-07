@@ -1,6 +1,7 @@
 /* eslint-disable react/no-multi-comp */
 'use client'
 
+import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import type { SizeOption } from '@/lib/types'
 import { cn } from '@/lib/utils'
@@ -13,6 +14,7 @@ interface SizeFilterCardProps {
 }
 
 function SizeFilterCard( { size, index, className }: SizeFilterCardProps ) {
+  const t = useTranslations( 'sizes' )
   // Staggered animation delay based on index
   const animationDelay = `${ index * 50 }ms`
 
@@ -51,7 +53,7 @@ function SizeFilterCard( { size, index, className }: SizeFilterCardProps ) {
 
         {/* Item count */}
         <span className='text-sm text-white/70'>
-          {size.count}+ items
+          {t( 'itemsCount', { count: size.count } )}
         </span>
       </div>
 
