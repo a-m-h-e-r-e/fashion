@@ -102,7 +102,9 @@
     "bargainTitle": "የድርድር ፍለጋዎን ይጀምሩ!",
     "premiumTitle": "ፕሪሚየም ስታይል በጥሩ ዋጋ",
     "lastDays": "የመጨረሻ {days} ቀናት",
-    "currency": "$"
+    "currency": "$",
+    "quickAdd": "ፈጣን ጨምር",
+    "sizeLabel": "መጠን {size}"
   },
   "nav": {
     "home": "መነሻ",
@@ -112,7 +114,8 @@
     "profile": "መገለጫ"
   },
   "sizes": {
-    "title": "በመጠን ይግዙ"
+    "title": "በመጠን ይግዙ",
+    "itemsCount": "{count}+ እቃዎች"
   },
   "settings": {
     "language": "ቋንቋ"

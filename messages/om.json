@@ -102,7 +102,9 @@
     "bargainTitle": "Barbaaduu daldala gaarii kee jalqabi!",
     "premiumTitle": "Akkaataa Olaanaa Gatii Gaariitiin",
     "lastDays": "Guyyaa {days} dhumaa",
-    "currency": "$"
+    "currency": "$",
+    "quickAdd": "Dabaluu saffisaan",
+    "sizeLabel": "Hamma {size}"
   },
   "nav": {
     "home": "Mana",
@@ -112,7 +114,8 @@
     "profile": "Piroofaayilii"
   },
   "sizes": {
-    "title": "Hamma bitadhu"
+    "title": "Hamma bitadhu",
+    "itemsCount": "{count}+ wantoota"
   },
   "settings": {
     "language": "Afaan"
