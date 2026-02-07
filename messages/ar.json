@@ -102,7 +102,9 @@
     "bargainTitle": "ابدأ رحلة البحث عن الصفقات!",
     "premiumTitle": "أناقة فاخرة بسعر رائع",
     "lastDays": "آخر {days} أيام",
-    "currency": "$"
+    "currency": "$",
+    "quickAdd": "إضافة سريعة",
+    "sizeLabel": "المقاس {size}"
   },
   "nav": {
     "home": "الرئيسية",
@@ -112,7 +114,8 @@
     "profile": "الملف الشخصي"
   },
   "sizes": {
-    "title": "تسوق حسب المقاس"
+    "title": "تسوق حسب المقاس",
+    "itemsCount": "{count}+ قطع"
   },
   "settings": {
     "language": "اللغة"

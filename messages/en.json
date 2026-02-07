@@ -102,7 +102,9 @@
     "bargainTitle": "Start your bargain hunt!",
     "premiumTitle": "Premium Style at a Great Price",
     "lastDays": "Last {days} days",
-    "currency": "$"
+    "currency": "$",
+    "quickAdd": "Quick Add",
+    "sizeLabel": "Size {size}"
   },
   "nav": {
     "home": "Home",
@@ -112,7 +114,8 @@
     "profile": "Profile"
   },
   "sizes": {
-    "title": "Shop by size"
+    "title": "Shop by size",
+    "itemsCount": "{count}+ items"
   },
   "settings": {
     "language": "Language"
