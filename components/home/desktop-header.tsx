@@ -1,5 +1,6 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import { Home, Heart, MessageCircle, User, ShoppingBag, Search } from 'lucide-react'
@@ -45,6 +46,18 @@ export function DesktopHeader( {
   className,
 }: DesktopHeaderProps ) {
   const t = useTranslations( 'nav' )
+  const [ isAtTop, setIsAtTop ] = useState( true )
+
+  useEffect( () => {
+    const handleScroll = () => {
+      setIsAtTop( window.scrollY < 8 )
+    }
+
+    handleScroll()
+    window.addEventListener( 'scroll', handleScroll, { passive: true } )
+
+    return () => window.removeEventListener( 'scroll', handleScroll )
+  }, [] )
 
   return (
     <header
@@ -55,13 +68,22 @@ export function DesktopHeader( {
         )
       }
     >
-      {/* Glass background */}
-      <div className='absolute inset-0 border-b border-white/10 bg-background/80 backdrop-blur-xl' />
+      {/* At top: blend with hero. Scrolled: subtle bar with border */}
+      <div
+        className={
+          cn(
+            'absolute inset-0 border-b transition-all duration-300',
+            isAtTop
+              ? 'border-transparent bg-transparent backdrop-blur-none dark:bg-transparent'
+              : 'border-border/80 bg-background/70 backdrop-blur-md dark:border-white/10 dark:bg-background/75',
+          )
+        }
+      />
 
       <div className='relative mx-auto flex h-16 max-w-7xl items-center justify-between px-8'>
         {/* Logo - Light Fashion */}
         <a className='group flex items-center gap-2.5' href='/'>
-          <div className='relative h-9 w-9 shrink-0 overflow-hidden rounded-full border-2 border-[hsl(var(--border))] shadow-lg transition-transform group-hover:scale-105'>
+          <div className='relative h-9 w-9 shrink-0 overflow-hidden rounded-full border-2 border-border shadow-md transition-transform group-hover:scale-105 dark:border-white/20'>
             <Image
               alt='Light Fashion'
               className='object-contain p-0.5'
@@ -72,7 +94,7 @@ export function DesktopHeader( {
             />
           </div>
           <div className='flex flex-col'>
-            <span className='font-sans text-xl font-bold tracking-wide text-white'>
+            <span className='font-sans text-xl font-bold tracking-wide text-foreground dark:text-white'>
               Light Fashion
             </span>
             <span className='text-sm font-semibold text-muted-foreground'>
@@ -94,7 +116,7 @@ export function DesktopHeader( {
                       'relative px-4 py-1.5 text-base font-semibold tracking-wide transition-colors',
                       isActive
                         ? 'text-[hsl(var(--gold))]'
-                        : 'text-muted-foreground hover:text-white',
+                        : 'text-muted-foreground hover:text-foreground dark:hover:text-white',
                     )
                   }
                   href={ item.href }
@@ -119,7 +141,7 @@ export function DesktopHeader( {
         <div className='flex items-center gap-1'>
           {/* Search button */}
           <button
-            className='flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-white/5 hover:text-white'
+            className='flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-muted/60 hover:text-foreground dark:hover:bg-white/10 dark:hover:text-white'
             type='button'
           >
             <Search className='h-5 w-5' />
@@ -127,7 +149,7 @@ export function DesktopHeader( {
 
           {/* Favorites */}
           <button
-            className='flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-white/5 hover:text-white'
+            className='flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-muted/60 hover:text-foreground dark:hover:bg-white/10 dark:hover:text-white'
             type='button'
           >
             <Heart className='h-5 w-5' />
@@ -135,7 +157,7 @@ export function DesktopHeader( {
 
           {/* Cart */}
           <button
-            className='relative flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-white/5 hover:text-white'
+            className='relative flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-muted/60 hover:text-foreground dark:hover:bg-white/10 dark:hover:text-white'
             type='button'
           >
             <ShoppingBag className='h-5 w-5' />
@@ -145,7 +167,7 @@ export function DesktopHeader( {
           </button>
 
           {/* Divider */}
-          <div className='mx-1.5 h-5 w-px bg-white/10' />
+          <div className='mx-1.5 h-5 w-px bg-border dark:bg-white/10' />
 
           {/* Theme toggle */}
           <ThemeToggle />
@@ -155,7 +177,7 @@ export function DesktopHeader( {
 
           {/* Profile avatar */}
           <button
-            className='ms-1.5 flex h-9 w-9 items-center justify-center overflow-hidden rounded-lg border-2 border-white/20 transition-colors hover:border-[hsl(var(--gold)/0.5)]'
+            className='ms-1.5 flex h-9 w-9 items-center justify-center overflow-hidden rounded-lg border-2 border-border transition-colors hover:border-[hsl(var(--gold)/0.5)] dark:border-white/20'
             type='button'
           >
             <div className='h-full w-full bg-gradient-to-br from-[hsl(var(--gold)/0.3)] to-[hsl(var(--rose)/0.3)]' />
