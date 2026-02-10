@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 // eslint-disable-next-line camelcase
-import { Fraunces, Manrope } from 'next/font/google'
+import { Playfair_Display, Plus_Jakarta_Sans } from 'next/font/google'
 import { notFound } from 'next/navigation'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages, setRequestLocale } from 'next-intl/server'
@@ -12,15 +12,15 @@ import { ThemeScript } from '@/components/providers/theme-script'
 import '../globals.css'
 
 /* eslint-disable new-cap */
-const fraunces = Fraunces( {
+const playfair = Playfair_Display( {
   subsets  : [ 'latin' ],
-  variable : '--font-fraunces',
+  variable : '--font-playfair',
   weight   : [ '400', '500', '600', '700' ],
 } )
 
-const manrope = Manrope( {
+const jakarta = Plus_Jakarta_Sans( {
   subsets  : [ 'latin' ],
-  variable : '--font-manrope',
+  variable : '--font-jakarta',
   weight   : [ '400', '500', '600', '700' ],
 } )
 
@@ -59,7 +59,7 @@ export default async function LocaleLayout( {
 
   return (
     <html dir={ dir } lang={ locale } suppressHydrationWarning>
-      <body className={ `${ fraunces.variable } ${ manrope.variable } font-sans min-h-screen` }>
+      <body className={ `${ playfair.variable } ${ jakarta.variable } font-sans min-h-screen` }>
         <ThemeScript />
         <ThemeProvider>
           <MSWProvider>
