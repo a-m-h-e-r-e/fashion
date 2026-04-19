@@ -1,8 +1,10 @@
 'use client'
 
+import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Heart } from 'lucide-react'
+import { formatPriceValue } from '@/lib/format-price'
 import { cn } from '@/lib/utils'
 import type { Product } from '@/lib/types'
 
@@ -12,6 +14,8 @@ interface SearchProductCardProps {
 }
 
 export function SearchProductCard( { product, className }: SearchProductCardProps ) {
+  const t = useTranslations( 'products' )
+
   return (
     <Link className={ cn( 'group relative', className ) } href={ `/product/${ product.id }` }>
       {/* Image container */}
@@ -50,13 +54,13 @@ export function SearchProductCard( { product, className }: SearchProductCardProp
         {/* Price */}
         <div className='flex items-baseline gap-2'>
           <span className='text-lg font-bold text-[hsl(var(--gold))]'>
-            {product.price} zł
+            {t( 'priceWithCurrency', { price: formatPriceValue( product.price ) } )}
           </span>
           {
             product.originalPrice
               ? (
                 <span className='text-base text-muted-foreground line-through'>
-                  {product.originalPrice} zł
+                  {t( 'priceWithCurrency', { price: formatPriceValue( product.originalPrice ) } )}
                 </span>
               )
               : null

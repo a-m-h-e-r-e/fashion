@@ -8,8 +8,8 @@ import type { Category } from '@/lib/types'
 
 interface SubcategoryScrollProps {
   subcategories  : Array<Category>
-  activeSlug?    : string
   parentCategory : string
+  activeSlug?    : string
   className?     : string
 }
 
@@ -32,7 +32,7 @@ export function SubcategoryScroll( {
           {
             subcategories.map( ( subcat ) => {
               const isActive = subcat.slug === activeSlug
-              const translationKey = subcat.name
+              const label = t.has( subcat.name ) ? t( subcat.name ) : subcat.name
 
               return (
                 <Link
@@ -58,7 +58,7 @@ export function SubcategoryScroll( {
                     }
                   >
                     <Image
-                      alt={ t( translationKey ) }
+                      alt={ label }
                       className='object-cover'
                       fill
                       sizes='80px'
@@ -76,7 +76,7 @@ export function SubcategoryScroll( {
                         )
                       }
                     >
-                      {t( translationKey )}
+                      {label}
                     </p>
                     <p className='text-sm text-muted-foreground sm:text-base'>
                       {subcat.itemCount.toLocaleString()}

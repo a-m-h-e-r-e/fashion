@@ -1,21 +1,17 @@
 'use client'
 
 import { useState } from 'react'
+import { useTranslations } from 'next-intl'
 import Image from 'next/image'
-import Link from 'next/link'
+import { Link as RoutedLink } from '@/i18n/navigation'
 import {
-  ArrowLeft,
-  Heart,
-  Share2,
-  Shield,
+  Music2,
+  Send,
+  Sparkles,
   Truck,
-  MessageCircle,
-  ChevronLeft,
-  ChevronRight,
-  Star,
-  Check,
 } from 'lucide-react'
 import { BottomNavigation } from '@/components/home'
+import { formatPriceValue } from '@/lib/format-price'
 import type { Product } from '@/lib/types'
 
 interface ProductDetailClientProps {
@@ -23,133 +19,27 @@ interface ProductDetailClientProps {
   relatedProducts : Array<Product>
 }
 
-// Mock additional product images for gallery
-const generateGalleryImages = ( mainImage: string ) => [
-  mainImage,
-  mainImage.replace( 'w=400', 'w=401' ), // Slight variation to simulate different images
-  mainImage.replace( 'w=400', 'w=402' ),
-  mainImage.replace( 'w=400', 'w=403' ),
-]
+const formatVariantEntry = ( key: string, value: string ): string => `${ key } ${ value }`
 
 export function ProductDetailClient( { product, relatedProducts }: ProductDetailClientProps ) {
-  const [ currentImageIndex, setCurrentImageIndex ] = useState( 0 )
-  const [ isFavorite, setIsFavorite ] = useState( false )
-  const [ selectedSize, setSelectedSize ] = useState( product.size )
-
-  const galleryImages = generateGalleryImages( product.imageUrl )
-
-  // Mock sizes based on the product's actual size
-  const availableSizes = [ 'XS', 'S', 'M', 'L', 'XL' ]
-
-  const handlePrevImage = () => {
-    setCurrentImageIndex( ( prev ) => {
-      if ( 0 === prev ) {
-        return galleryImages.length - 1
-      }
-
-      return prev - 1
-    } )
-  }
-
-  const handleNextImage = () => {
-    setCurrentImageIndex( ( prev ) => {
-      if ( galleryImages.length - 1 === prev ) {
-        return 0
-      }
-
-      return prev + 1
-    } )
-  }
-
-  const formatDate = ( dateString: string ) => {
-    const date = new Date( dateString )
-    const now = new Date()
-    const diffDays = Math.floor( ( now.getTime() - date.getTime() ) / ( 1000 * 60 * 60 * 24 ) )
-
-    if ( 0 === diffDays ) {
-      return 'Today'
-    }
-
-    if ( 1 === diffDays ) {
-      return 'Yesterday'
-    }
-
-    if ( 7 > diffDays ) {
-      return `${ diffDays } days ago`
-    }
-
-    return date.toLocaleDateString( 'en-US', {
-      day   : 'numeric',
-      month : 'short',
-    } )
-  }
+  const t = useTranslations( 'products' )
+  const td = useTranslations( 'products.detail' )
+  const variants = product.variants ?? []
+  const availableVariants = variants.filter( ( variant ) => variant.isAvailable )
+  const [ selectedVariantSku, setSelectedVariantSku ] = useState( availableVariants[0]?.sku ?? variants[0]?.sku ?? '' )
+  const selectedVariant = variants.find( ( variant ) => variant.sku === selectedVariantSku ) ?? availableVariants[0] ?? variants[0]
+  const selectedPrice = selectedVariant?.price ?? product.price
+  const selectedOriginalPrice = selectedVariant?.originalPrice ?? product.originalPrice
+  const selectedDiscount = null !== selectedOriginalPrice && 0 < selectedOriginalPrice
+    ? Math.round( ( ( selectedOriginalPrice - selectedPrice ) / selectedOriginalPrice ) * 100 )
+    : product.discount
+  const selectedImage = selectedVariant?.imageUrl ?? product.imageUrl
+  const productDescription = 'string' === typeof product.description
+    ? product.description.trim()
+    : ''
 
   return (
-    <div className='noise-overlay min-h-screen pb-32 lg:pb-16 lg:pt-20'>
-      {/* Mobile Header */}
-      <header className='fixed inset-x-0 top-0 z-50 flex items-center justify-between bg-gradient-to-b from-black/80 to-transparent px-4 py-4 lg:hidden'>
-        <Link
-          className='flex h-10 w-10 items-center justify-center rounded-full bg-black/40 backdrop-blur-sm transition-colors hover:bg-black/60'
-          href='javascript:history.back()'
-        >
-          <ArrowLeft className='h-5 w-5 text-white' />
-        </Link>
-        <div className='flex gap-2'>
-          <button
-            className='flex h-10 w-10 items-center justify-center rounded-full bg-black/40 backdrop-blur-sm transition-colors hover:bg-black/60'
-            onClick={
-              () => {
-                setIsFavorite( !isFavorite )
-              }
-            }
-            type='button'
-          >
-            <Heart
-              className={ `h-5 w-5 transition-colors ${ isFavorite ? 'fill-[hsl(var(--rose))] text-[hsl(var(--rose))]' : 'text-white' }` }
-            />
-          </button>
-          <button
-            className='flex h-10 w-10 items-center justify-center rounded-full bg-black/40 backdrop-blur-sm transition-colors hover:bg-black/60'
-            type='button'
-          >
-            <Share2 className='h-5 w-5 text-white' />
-          </button>
-        </div>
-      </header>
-
-      {/* Desktop Header */}
-      <header className='fixed inset-x-0 top-0 z-50 hidden border-b border-white/10 bg-background/80 backdrop-blur-xl lg:block'>
-        <div className='mx-auto flex max-w-7xl items-center justify-between px-8 py-4'>
-          <Link
-            className='flex items-center gap-2 text-muted-foreground transition-colors hover:text-white'
-            href='javascript:history.back()'
-          >
-            <ArrowLeft className='h-5 w-5' />
-            <span className='font-medium'>Back</span>
-          </Link>
-          <div className='flex gap-3'>
-            <button
-              className='flex h-10 w-10 items-center justify-center rounded-full border border-white/20 transition-colors hover:bg-white/5'
-              onClick={
-                () => {
-                  setIsFavorite( !isFavorite )
-                }
-              }
-              type='button'
-            >
-              <Heart
-                className={ `h-5 w-5 transition-colors ${ isFavorite ? 'fill-[hsl(var(--rose))] text-[hsl(var(--rose))]' : 'text-white' }` }
-              />
-            </button>
-            <button
-              className='flex h-10 w-10 items-center justify-center rounded-full border border-white/20 transition-colors hover:bg-white/5'
-              type='button'
-            >
-              <Share2 className='h-5 w-5 text-white' />
-            </button>
-          </div>
-        </div>
-      </header>
+    <div className='noise-overlay min-h-screen pb-32 lg:pb-16'>
 
       <div className='lg:mx-auto lg:max-w-7xl lg:px-8 lg:py-8'>
         <div className='lg:grid lg:grid-cols-2 lg:gap-12'>
@@ -163,90 +53,18 @@ export function ProductDetailClient( { product, relatedProducts }: ProductDetail
                 fill
                 priority
                 sizes='(max-width: 1024px) 100vw, 50vw'
-                src={ galleryImages[currentImageIndex] }
+                src={ selectedImage }
               />
 
               {/* Discount Badge */}
               {
-                product.discount
+                selectedDiscount
                   ? (
                     <div className='absolute start-4 top-4 rounded-full bg-[hsl(var(--rose))] px-3 py-1.5 text-base font-bold text-white lg:start-6 lg:top-6'>
-                      -{product.discount}%
+                      -{selectedDiscount}%
                     </div>
                   )
                   : null
-              }
-
-              {/* Navigation Arrows */}
-              <button
-                className='absolute start-2 top-1/2 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/40 backdrop-blur-sm transition-colors hover:bg-black/60 lg:flex'
-                onClick={ handlePrevImage }
-                type='button'
-              >
-                <ChevronLeft className='h-6 w-6 text-white' />
-              </button>
-              <button
-                className='absolute end-2 top-1/2 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/40 backdrop-blur-sm transition-colors hover:bg-black/60 lg:flex'
-                onClick={ handleNextImage }
-                type='button'
-              >
-                <ChevronRight className='h-6 w-6 text-white' />
-              </button>
-
-              {/* Image Indicators */}
-              <div className='absolute inset-x-0 bottom-4 flex justify-center gap-2'>
-                {
-                  galleryImages.map( ( _, idx ) => (
-                    <button
-                      className={
-                        `h-2 rounded-full transition-all ${
-                          idx === currentImageIndex
-                            ? 'w-6 bg-white'
-                            : 'w-2 bg-white/40'
-                        }`
-                      }
-                      key={ idx }
-                      onClick={
-                        () => {
-                          setCurrentImageIndex( idx )
-                        }
-                      }
-                      type='button'
-                    />
-                  ) )
-                }
-              </div>
-            </div>
-
-            {/* Thumbnail Gallery - Desktop */}
-            <div className='mt-4 hidden gap-3 lg:flex'>
-              {
-                galleryImages.map( ( img, idx ) => (
-                  <button
-                    className={
-                      `relative aspect-square w-20 overflow-hidden rounded-xl border-2 transition-all ${
-                        idx === currentImageIndex
-                          ? 'border-[hsl(var(--gold))]'
-                          : 'border-transparent opacity-60 hover:opacity-100'
-                      }`
-                    }
-                    key={ idx }
-                    onClick={
-                      () => {
-                        setCurrentImageIndex( idx )
-                      }
-                    }
-                    type='button'
-                  >
-                    <Image
-                      alt={ `${ product.title } view ${ idx + 1 }` }
-                      className='object-cover'
-                      fill
-                      sizes='80px'
-                      src={ img }
-                    />
-                  </button>
-                ) )
               }
             </div>
           </div>
@@ -266,149 +84,119 @@ export function ProductDetailClient( { product, relatedProducts }: ProductDetail
             {/* Price */}
             <div className='mt-4 flex items-baseline gap-3'>
               <span className='text-3xl font-bold text-[hsl(var(--gold))] lg:text-4xl'>
-                {product.price} zł
+                {t( 'priceWithCurrency', { price: formatPriceValue( selectedPrice ) } )}
               </span>
               {
-                product.originalPrice
+                selectedOriginalPrice
                   ? (
                     <span className='text-xl text-muted-foreground line-through'>
-                      {product.originalPrice} zł
+                      {t( 'priceWithCurrency', { price: formatPriceValue( selectedOriginalPrice ) } )}
                     </span>
                   )
                   : null
               }
             </div>
 
-            {/* Condition & Date */}
-            <div className='mt-4 flex items-center gap-4'>
-              <div className='flex items-center gap-1.5'>
-                <div className='flex h-5 w-5 items-center justify-center rounded-full bg-green-500/20'>
-                  <Check className='h-3 w-3 text-green-400' />
-                </div>
-                <span className='text-base text-muted-foreground'>
-                  {
-                    product.discount && 50 < product.discount
-                      ? 'Very good condition'
-                      : 'Good condition'
-                  }
-                </span>
-              </div>
-              <span className='text-base text-muted-foreground'>
-                Listed {formatDate( product.lastUpdated )}
-              </span>
-            </div>
-
-            {/* Size Selection */}
+            {/* Variants */}
             <div className='mt-6'>
               <div className='mb-3 flex items-center justify-between'>
-                <span className='font-medium text-white'>Size</span>
-                <button className='text-base text-[hsl(var(--gold))] underline-offset-2 hover:underline' type='button'>
-                  Size guide
-                </button>
+                <span className='font-medium text-white'>{td( 'availableLabel' )}</span>
               </div>
               <div className='flex flex-wrap gap-2'>
                 {
-                  availableSizes.map( ( size ) => (
-                    <button
-                      className={
-                        `min-w-[3rem] rounded-lg border px-4 py-2.5 text-base font-medium transition-all ${
-                          size === selectedSize
-                            ? 'border-[hsl(var(--gold))] bg-[hsl(var(--gold))]/10 text-[hsl(var(--gold))]'
-                            : size === product.size
-                              ? 'border-white/30 text-white hover:border-white/50'
-                              : 'border-white/10 text-muted-foreground opacity-50'
-                        }`
-                      }
-                      disabled={ size !== product.size }
-                      key={ size }
-                      onClick={
-                        () => {
-                          setSelectedSize( size )
-                        }
-                      }
-                      type='button'
-                    >
-                      {size}
-                    </button>
-                  ) )
-                }
-              </div>
-              <p className='mt-2 text-sm text-muted-foreground'>
-                Only size {product.size} available
-              </p>
-            </div>
+                  availableVariants.map( ( variant ) => {
+                    const isSelected = variant.sku === selectedVariant?.sku
+                    const variantDetailEntries = Object.entries( variant.attributes )
+                      .filter( ( [ key, value ] ) => 'brand' !== key.toLowerCase() && 0 < key.trim().length && 0 < String( value )
+                        .trim().length )
+                    const hasMultipleAttributes = 1 < variantDetailEntries.length
 
-            {/* Seller Info */}
-            <div className='mt-6 rounded-2xl border border-white/10 bg-white/5 p-4'>
-              <div className='flex items-center gap-3'>
-                <div className='flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-[hsl(var(--gold))] to-[hsl(var(--gold-dark))]'>
-                  <span className='text-lg font-bold text-black'>
-                    {product.brand.charAt( 0 )}
-                  </span>
-                </div>
-                <div className='flex-1'>
-                  <p className='font-medium text-white'>Fashion Lover</p>
-                  <div className='flex items-center gap-2'>
-                    <div className='flex items-center gap-0.5'>
-                      {
-                        [ 1, 2, 3, 4, 5 ].map( ( star ) => (
-                          <Star
-                            className={ `h-3.5 w-3.5 ${ 4 >= star ? 'fill-[hsl(var(--gold))] text-[hsl(var(--gold))]' : 'text-muted-foreground' }` }
-                            key={ star }
-                          />
-                        ) )
-                      }
-                    </div>
-                    <span className='text-base text-muted-foreground'>(127 reviews)</span>
-                  </div>
-                </div>
-                <button
-                  className='flex h-10 w-10 items-center justify-center rounded-full border border-white/20 transition-colors hover:bg-white/5'
-                  type='button'
-                >
-                  <MessageCircle className='h-5 w-5 text-white' />
-                </button>
+                    return (
+                      <button
+                        className={
+                          `${
+                            hasMultipleAttributes
+                              ? 'rounded-xl px-3 py-3'
+                              : 'rounded-full px-3 py-2'
+                          } border text-left transition-all ${
+                            isSelected
+                              ? 'border-[hsl(var(--gold))] bg-[hsl(var(--gold))]/10 text-[hsl(var(--gold))]'
+                              : 'border-white/20 bg-white/5 text-white hover:border-white/40'
+                          }`
+                        }
+                        key={ variant.sku }
+                        onClick={
+                          () => {
+                            setSelectedVariantSku( variant.sku )
+                          }
+                        }
+                        type='button'
+                      >
+                        {
+                          hasMultipleAttributes
+                            ? (
+                              <div className='flex flex-wrap gap-2'>
+                                {
+                                  variantDetailEntries
+                                    .map( ( [ key, value ] ) => (
+                                      <span
+                                        className={ `rounded-full border px-2 py-1 text-sm ${ isSelected ? 'border-[hsl(var(--gold))]/40 bg-[hsl(var(--gold))]/10 text-[hsl(var(--gold))]' : 'border-white/10 bg-background/30 text-white' }` }
+                                        key={ `${ variant.sku }-${ key }` }
+                                      >
+                                        {formatVariantEntry( key, String( value ) )}
+                                      </span>
+                                    ) )
+                                }
+                              </div>
+                            )
+                            : (
+                              <span className='text-sm font-medium'>
+                                {
+                                  0 < variantDetailEntries.length
+                                    ? formatVariantEntry( variantDetailEntries[0][0], String( variantDetailEntries[0][1] ) )
+                                    : variant.sku
+                                }
+                              </span>
+                            )
+                        }
+                      </button>
+                    )
+                  } )
+                }
               </div>
             </div>
 
             {/* Trust Badges */}
-            <div className='mt-6 grid grid-cols-2 gap-3'>
-              <div className='flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 p-3'>
-                <Shield className='h-5 w-5 text-[hsl(var(--gold))]' />
-                <div>
-                  <p className='text-base font-medium text-white'>Buyer Protection</p>
-                  <p className='text-sm text-muted-foreground'>Full refund if item not received</p>
-                </div>
-              </div>
+            <div className='mt-6'>
               <div className='flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 p-3'>
                 <Truck className='h-5 w-5 text-[hsl(var(--gold))]' />
                 <div>
-                  <p className='text-base font-medium text-white'>Fast Shipping</p>
-                  <p className='text-sm text-muted-foreground'>Usually ships in 1-2 days</p>
+                  <p className='text-base font-medium text-white'>{td( 'fastDeliveryTitle' )}</p>
+                  <p className='text-sm text-muted-foreground'>{td( 'fastDeliverySubtitle' )}</p>
                 </div>
               </div>
             </div>
 
             {/* Description */}
             <div className='mt-6'>
-              <h3 className='mb-2 font-medium text-white'>Description</h3>
-              <p className='leading-relaxed text-muted-foreground'>
-                Beautiful {product.title.toLowerCase()} from {product.brand}.
-                This item is in {product.discount && 50 < product.discount ? 'very good' : 'good'} condition.
-                Size {product.size}, perfect for any occasion.
-                Worn only a few times, no visible wear or damage.
-              </p>
+              <h3 className='mb-2 font-medium text-white'>{td( 'descriptionHeading' )}</h3>
+              {
+                0 < productDescription.length
+                  ? (
+                    <p className='whitespace-pre-line leading-relaxed text-muted-foreground'>
+                      {productDescription}
+                    </p>
+                  )
+                  : (
+                    <div className='space-y-1 leading-relaxed text-muted-foreground'>
+                      <p>{td( 'fallbackDelivery' )}</p>
+                      <p>{td( 'fallbackPhone' )}</p>
+                      <p>{td( 'fallbackAddress' )}</p>
+                    </div>
+                  )
+              }
             </div>
 
-            {/* Desktop Action Buttons */}
-            <div className='mt-8 hidden gap-4 lg:flex'>
-              <button className='btn-elegant flex-1 py-4 text-lg' type='button'>
-                Buy Now
-              </button>
-              <button className='btn-outline flex-1 py-4 text-lg' type='button'>
-                Make Offer
-              </button>
-            </div>
           </div>
         </div>
 
@@ -418,13 +206,13 @@ export function ProductDetailClient( { product, relatedProducts }: ProductDetail
             ? (
               <section className='mt-12 px-4 lg:mt-16 lg:px-0'>
                 <h2 className='mb-6 font-serif text-xl font-semibold text-white'>
-                  You might also like
+                  {td( 'relatedTitle' )}
                 </h2>
                 <div className='grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4'>
                   {
                     relatedProducts.slice( 0, 4 )
                       .map( ( related ) => (
-                        <Link
+                        <RoutedLink
                           className='group'
                           href={ `/product/${ related.id }` }
                           key={ related.id }
@@ -450,13 +238,13 @@ export function ProductDetailClient( { product, relatedProducts }: ProductDetail
                           <div className='mt-3'>
                             <div className='flex items-baseline gap-2'>
                               <span className='font-bold text-[hsl(var(--gold))]'>
-                                {related.price} zł
+                                {t( 'priceWithCurrency', { price: formatPriceValue( related.price ) } )}
                               </span>
                               {
                                 related.originalPrice
                                   ? (
                                     <span className='text-base text-muted-foreground line-through'>
-                                      {related.originalPrice} zł
+                                      {t( 'priceWithCurrency', { price: formatPriceValue( related.originalPrice ) } )}
                                     </span>
                                   )
                                   : null
@@ -466,7 +254,7 @@ export function ProductDetailClient( { product, relatedProducts }: ProductDetail
                               {related.brand}
                             </p>
                           </div>
-                        </Link>
+                        </RoutedLink>
                       ) )
                   }
                 </div>
@@ -476,17 +264,50 @@ export function ProductDetailClient( { product, relatedProducts }: ProductDetail
         }
       </div>
 
-      {/* Mobile Fixed Bottom Bar */}
-      <div className='fixed inset-x-0 bottom-0 z-40 border-t border-white/10 bg-background/95 p-4 backdrop-blur-xl lg:hidden'>
-        <div className='flex gap-3'>
-          <button className='btn-elegant flex-1 py-3.5' type='button'>
-            Buy Now - {product.price} zł
-          </button>
-          <button className='btn-outline px-6 py-3.5' type='button'>
-            Offer
-          </button>
+      <footer className='mt-12 border-t border-white/10 bg-background/50 px-4 py-8 backdrop-blur-sm lg:px-8'>
+        <div className='mx-auto w-full max-w-7xl'>
+          <div className='flex items-start gap-3'>
+            <div className='rounded-xl bg-[hsl(var(--gold))]/20 p-2.5'>
+              <Sparkles className='h-5 w-5 text-[hsl(var(--gold))]' />
+            </div>
+            <div>
+              <p className='text-lg font-semibold text-white'>{td( 'footerBrandName' )}</p>
+              <p className='mt-1 text-sm text-[hsl(var(--gold))]'>{td( 'footerTagline' )}</p>
+            </div>
+          </div>
+
+          <p className='mt-4 text-sm leading-relaxed text-muted-foreground'>
+            {td( 'footerHeadline' )}
+          </p>
+
+          <div className='mt-4 grid gap-2 sm:grid-cols-2'>
+            <a
+              className='flex items-center justify-between rounded-xl border border-white/10 bg-background/30 px-3 py-2 text-sm text-white transition-colors hover:border-[hsl(var(--gold))]/40 hover:bg-background/50'
+              href='https://t.me/lightfashions'
+              rel='noreferrer'
+              target='_blank'
+            >
+              <span className='flex items-center gap-2'>
+                <Send className='h-4 w-4 text-[hsl(var(--gold))]' />
+                <span>{td( 'footerTelegramLabel' )}</span>
+              </span>
+              <span className='text-muted-foreground'>{td( 'footerTelegramHandle' )}</span>
+            </a>
+            <a
+              className='flex items-center justify-between rounded-xl border border-white/10 bg-background/30 px-3 py-2 text-sm text-white transition-colors hover:border-[hsl(var(--gold))]/40 hover:bg-background/50'
+              href='https://www.tiktok.com/@lightfashions'
+              rel='noreferrer'
+              target='_blank'
+            >
+              <span className='flex items-center gap-2'>
+                <Music2 className='h-4 w-4 text-[hsl(var(--gold))]' />
+                <span>{td( 'footerTiktokLabel' )}</span>
+              </span>
+              <span className='text-muted-foreground'>{td( 'footerTiktokHandle' )}</span>
+            </a>
+          </div>
         </div>
-      </div>
+      </footer>
 
       {/* Bottom Navigation - Mobile only (behind the action bar) */}
       <div className='hidden'>

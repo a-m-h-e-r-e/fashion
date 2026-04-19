@@ -25,6 +25,7 @@ export interface Category {
 export interface Product {
   id            : string
   title         : string
+  description?  : string
   price         : number
   originalPrice : number | null
   imageUrl      : string
@@ -33,6 +34,18 @@ export interface Product {
   brand         : string
   categoryId    : string // Links to leaf category
   lastUpdated   : string // ISO date string
+  attributes?   : Record<string, string>
+  variants?     : Array<{
+    sku           : string
+    imageUrl      : string | null
+    stock         : number
+    price         : number
+    originalPrice : number | null
+    isAvailable   : boolean
+    attributes    : Record<string, string>
+  }>
+  availableVariantCount?   : number
+  unavailableVariantCount? : number
 }
 
 // =============================================================================
