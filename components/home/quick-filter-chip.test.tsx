@@ -12,8 +12,8 @@ afterEach( () => {
 const mockFilter: QuickFilter = {
   id       : 'sale',
   type     : 'sale',
-  labelKey  : 'filters.sale',
-  imageUrl  : 'https://example.com/sale.jpg',
+  labelKey : 'filters.sale',
+  imageUrl : 'https://example.com/sale.jpg',
   badge    : '-60%',
 }
 
@@ -88,7 +88,11 @@ describe( 'QuickFiltersRow', () => {
   test( 'renders multiple filter chips', () => {
     const filters: Array<QuickFilter> = [
       mockFilter,
-      { ...mockFilterNoBadge, id: 'condition', labelKey: 'filters.perfectCondition' },
+      {
+        ...mockFilterNoBadge,
+        id       : 'condition',
+        labelKey : 'filters.perfectCondition',
+      },
     ]
 
     renderWithIntl( <QuickFiltersRow filters={ filters } /> )

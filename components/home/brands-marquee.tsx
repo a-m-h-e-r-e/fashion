@@ -22,11 +22,13 @@ const brands = [
 export function BrandsMarquee( { className }: BrandsMarqueeProps ) {
   return (
     <div
-      className={ cn(
-        'relative overflow-hidden border-y py-4',
-        'border-border bg-muted/50 dark:border-white/10 dark:bg-black/30',
-        className,
-      ) }
+      className={
+        cn(
+          'relative overflow-hidden border-y py-4',
+          'border-border bg-muted/50 dark:border-white/10 dark:bg-black/30',
+          className,
+        )
+      }
     >
       {/* Fade edges */}
       <div className='pointer-events-none absolute inset-y-0 start-0 z-10 w-32 bg-gradient-to-r from-background to-transparent' />
@@ -43,10 +45,7 @@ export function BrandsMarquee( { className }: BrandsMarqueeProps ) {
                 key={ `first-${ index }` }
               >
                 <span
-                  className={
-                    'whitespace-nowrap font-serif text-lg font-medium tracking-widest transition-colors hover:text-[hsl(var(--gold))] lg:text-xl '
-                    + 'text-muted-foreground dark:text-white/60'
-                  }
+                  className={ 'whitespace-nowrap font-serif text-lg font-medium tracking-widest transition-colors hover:text-[hsl(var(--gold))] lg:text-xl ' + 'text-muted-foreground dark:text-white/60' }
                 >
                   {brand}
                 </span>
@@ -64,10 +63,7 @@ export function BrandsMarquee( { className }: BrandsMarqueeProps ) {
                 key={ `second-${ index }` }
               >
                 <span
-                  className={
-                    'whitespace-nowrap font-serif text-lg font-medium tracking-widest transition-colors hover:text-[hsl(var(--gold))] lg:text-xl '
-                    + 'text-muted-foreground dark:text-white/60'
-                  }
+                  className={ 'whitespace-nowrap font-serif text-lg font-medium tracking-widest transition-colors hover:text-[hsl(var(--gold))] lg:text-xl ' + 'text-muted-foreground dark:text-white/60' }
                 >
                   {brand}
                 </span>

@@ -43,12 +43,19 @@ describe( 'cn', () => {
   } )
 
   test( 'handles object form', () => {
-    expect( cn( { foo: true, bar: false, baz: true } ) )
+    expect( cn( {
+      foo : true,
+      bar : false,
+      baz : true,
+    } ) )
       .toBe( 'foo baz' )
   } )
 
   test( 'combines string, array, and object', () => {
-    expect( cn( 'base', [ 'a', 'b' ], { active: true, disabled: false } ) )
+    expect( cn( 'base', [ 'a', 'b' ], {
+      active   : true,
+      disabled : false,
+    } ) )
       .toBe( 'base a b active' )
   } )
 } )

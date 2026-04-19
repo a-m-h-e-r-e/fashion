@@ -52,7 +52,7 @@ describe( 'Input', () => {
   test( 'forwards ref', () => {
     const ref = { current: null as HTMLInputElement | null }
 
-    render( <Input ref={ ref } placeholder='Ref' /> )
+    render( <Input placeholder='Ref' ref={ ref } /> )
 
     expect( ref.current )
       .toBeInstanceOf( HTMLInputElement )
