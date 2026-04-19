@@ -7,11 +7,26 @@ import { cn } from '@/lib/utils'
 interface FooterProps { className?: string }
 
 const shopLinks = [
-  { href: '/women', key: 'women' },
-  { href: '/men', key: 'men' },
-  { href: '/children', key: 'children' },
-  { href: '/accessories', key: 'accessories' },
-  { href: '/sports', key: 'sports' },
+  {
+    href : '/women',
+    key  : 'women',
+  },
+  {
+    href : '/men',
+    key  : 'men',
+  },
+  {
+    href : '/children',
+    key  : 'children',
+  },
+  {
+    href : '/accessories',
+    key  : 'accessories',
+  },
+  {
+    href : '/sports',
+    key  : 'sports',
+  },
 ] as const
 
 export function Footer( { className }: FooterProps ) {
@@ -20,10 +35,12 @@ export function Footer( { className }: FooterProps ) {
 
   return (
     <footer
-      className={ cn(
-        'border-t border-border bg-muted/50 dark:border-white/10 dark:bg-black/20',
-        className,
-      ) }
+      className={
+        cn(
+          'border-t border-border bg-muted/50 dark:border-white/10 dark:bg-black/20',
+          className,
+        )
+      }
     >
       <div className='mx-auto max-w-7xl px-4 py-12 lg:px-8 lg:py-16'>
         <div className='grid gap-10 sm:grid-cols-2 lg:grid-cols-4'>
@@ -107,7 +124,12 @@ export function Footer( { className }: FooterProps ) {
 
         <div className='mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 dark:border-white/10 sm:flex-row'>
           <p className='text-xs text-muted-foreground dark:text-white/60'>
-            {t( 'copyright', { year: new Date().getFullYear() } )}
+            {
+              t( 'copyright', {
+                year : new Date()
+                  .getFullYear(),
+              } )
+            }
           </p>
           <div className='flex gap-6'>
             <Link

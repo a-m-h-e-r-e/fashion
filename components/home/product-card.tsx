@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import { Heart, ShoppingBag } from 'lucide-react'
 import type { Product } from '@/lib/types'
+import { formatPriceValue } from '@/lib/format-price'
 import { cn } from '@/lib/utils'
 
 interface ProductCardProps {
@@ -118,13 +119,13 @@ export function ProductCard( { product, className }: ProductCardProps ) {
         {/* Price row */}
         <div className='mt-1 flex items-baseline gap-2'>
           <span className='font-serif text-lg font-bold text-[hsl(var(--gold))]'>
-            {t( 'currency' )}{product.price}
+            {t( 'priceWithCurrency', { price: formatPriceValue( product.price ) } )}
           </span>
           {
             null !== product.originalPrice && 0 < product.originalPrice
               ? (
                 <span className='text-base text-muted-foreground line-through'>
-                  {t( 'currency' )}{product.originalPrice}
+                  {t( 'priceWithCurrency', { price: formatPriceValue( product.originalPrice ) } )}
                 </span>
               )
               : null

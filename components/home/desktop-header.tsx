@@ -50,13 +50,15 @@ export function DesktopHeader( {
 
   useEffect( () => {
     const handleScroll = () => {
-      setIsAtTop( window.scrollY < 8 )
+      setIsAtTop( 8 > window.scrollY )
     }
 
     handleScroll()
     window.addEventListener( 'scroll', handleScroll, { passive: true } )
 
-    return () => window.removeEventListener( 'scroll', handleScroll )
+    return () => {
+      window.removeEventListener( 'scroll', handleScroll )
+    }
   }, [] )
 
   return (

@@ -1,6 +1,8 @@
 import { expect, test, describe, afterEach } from 'vitest'
 import { render, screen, cleanup, fireEvent } from '@testing-library/react'
+import { NextIntlClientProvider } from 'next-intl'
 import { SearchProductCard } from './search-product-card'
+import messages from '../../messages/en.json'
 import type { Product } from '@/lib/types'
 
 afterEach( () => {
@@ -17,7 +19,8 @@ const mockProduct: Product = {
   discount      : 50,
   imageUrl      : 'https://example.com/dress.jpg',
   categoryId    : 'cat-dresses',
-  lastUpdated   : new Date().toISOString(),
+  lastUpdated   : new Date()
+    .toISOString(),
 }
 
 const mockProductNoDiscount: Product = {
@@ -33,53 +36,75 @@ const mockProductHighDiscount: Product = {
   discount : 75,
 }
 
+const mockProductLargePrice: Product = {
+  ...mockProduct,
+  id            : 'prod-4',
+  originalPrice : 9876543,
+  price         : 12345,
+}
+
+const renderWithIntl = ( component: React.ReactNode ) => render(
+  <NextIntlClientProvider locale='en' messages={ messages }>
+    {component}
+  </NextIntlClientProvider>,
+)
+
 describe( 'SearchProductCard', () => {
   test( 'renders product price', () => {
-    render( <SearchProductCard product={ mockProduct } /> )
+    renderWithIntl( <SearchProductCard product={ mockProduct } /> )
 
-    expect( screen.getByText( '15 zł' ) )
+    expect( screen.getByText( '$15' ) )
       .toBeDefined()
   } )
 
   test( 'renders original price when discounted', () => {
-    render( <SearchProductCard product={ mockProduct } /> )
+    renderWithIntl( <SearchProductCard product={ mockProduct } /> )
 
-    expect( screen.getByText( '30 zł' ) )
+    expect( screen.getByText( '$30' ) )
+      .toBeDefined()
+  } )
+
+  test( 'renders comma-formatted prices', () => {
+    renderWithIntl( <SearchProductCard product={ mockProductLargePrice } /> )
+
+    expect( screen.getByText( '$12,345' ) )
+      .toBeDefined()
+    expect( screen.getByText( '$9,876,543' ) )
       .toBeDefined()
   } )
 
   test( 'does not render original price when null', () => {
-    render( <SearchProductCard product={ mockProductNoDiscount } /> )
+    renderWithIntl( <SearchProductCard product={ mockProductNoDiscount } /> )
 
-    const original = screen.queryByText( '30 zł' )
+    const original = screen.queryByText( '$30' )
 
     expect( original )
       .toBeNull()
   } )
 
   test( 'renders condition "Very good" when discount > 50', () => {
-    render( <SearchProductCard product={ mockProductHighDiscount } /> )
+    renderWithIntl( <SearchProductCard product={ mockProductHighDiscount } /> )
 
     expect( screen.getByText( 'Very good' ) )
       .toBeDefined()
   } )
 
   test( 'renders condition "Good" when discount <= 50', () => {
-    render( <SearchProductCard product={ mockProduct } /> )
+    renderWithIntl( <SearchProductCard product={ mockProduct } /> )
 
     expect( screen.getByText( 'Good' ) )
       .toBeDefined()
   } )
 
   test( 'renders title line with brand, title and size', () => {
-    render( <SearchProductCard product={ mockProduct } /> )
+    renderWithIntl( <SearchProductCard product={ mockProduct } /> )
 
     expect( screen.getByText( /Zara, Floral Dress, size M/ ) )
       .toBeDefined()
   } )
 
   test( 'renders link to product page', () => {
-    render( <SearchProductCard product={ mockProduct } /> )
+    renderWithIntl( <SearchProductCard product={ mockProduct } /> )
 
     const link = screen.getByRole( 'link' )
 
@@ -88,15 +113,16 @@ describe( 'SearchProductCard', () => {
   } )
 
   test( 'renders favorite button', () => {
-    render( <SearchProductCard product={ mockProduct } /> )
+    renderWithIntl( <SearchProductCard product={ mockProduct } /> )
 
     const buttons = screen.getAllByRole( 'button' )
 
-    expect( buttons ).toHaveLength( 1 )
+    expect( buttons )
+      .toHaveLength( 1 )
   } )
 
   test( 'favorite button does not navigate', () => {
-    render( <SearchProductCard product={ mockProduct } /> )
+    renderWithIntl( <SearchProductCard product={ mockProduct } /> )
 
     const link = screen.getByRole( 'link' )
     const button = screen.getByRole( 'button' )
@@ -108,14 +134,14 @@ describe( 'SearchProductCard', () => {
   } )
 
   test( 'renders brand initial in avatar', () => {
-    render( <SearchProductCard product={ mockProduct } /> )
+    renderWithIntl( <SearchProductCard product={ mockProduct } /> )
 
     expect( screen.getByText( 'Z' ) )
       .toBeDefined()
   } )
 
   test( 'applies custom className', () => {
-    const { container } = render(
+    const { container } = renderWithIntl(
       <SearchProductCard className='custom-class' product={ mockProduct } />,
     )
 

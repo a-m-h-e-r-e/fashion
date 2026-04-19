@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "title": "ሉክስ ፋሽን",
+    "title": "ላይት ፋሽን",
     "description": "ዘላቂ ፋሽን ያግኙ - ያገለገሉ ልብሶችን ይግዙ እና ይሽጡ"
   },
   "home": {
@@ -103,8 +103,35 @@
     "premiumTitle": "ፕሪሚየም ስታይል በጥሩ ዋጋ",
     "lastDays": "የመጨረሻ {days} ቀናት",
     "currency": "$",
+    "priceWithCurrency": "{price} ብር",
     "quickAdd": "ፈጣን ጨምር",
-    "sizeLabel": "መጠን {size}"
+    "sizeLabel": "መጠን {size}",
+    "detail": {
+      "back": "ተመለስ",
+      "availableLabel": "አማራጮች",
+      "availableVariantsCount": "{count} የሚገኙ ተለዋዋጮች",
+      "onlySizeAvailable": "መጠን {size} ብቻ ይገኛል",
+      "fastDeliveryTitle": "ፈጣን ዴሊቨሪ",
+      "fastDeliverySubtitle": "በአንድ ቀን",
+      "descriptionHeading": "መግለጫ",
+      "descriptionBody": "ከ{brand} የሚመጣው ውብ {title}። ይህ ዕቃ በ{condition} ሁኔታ ላይ ነው። መጠን {size}፣ ለማንኛውም ዕድል ተስማሚ። ጥቂት ጊዜ ብቻ ተለብሶ፣ የሚታይ ዕድፍ ወይም ጉድለት የለውም።",
+      "conditionGood": "ጥሩ",
+      "conditionVeryGood": "በጣም ጥሩ",
+      "fallbackDelivery": "🚐 ነጻ ዴሊቨሪ",
+      "fallbackPhone": "📲 ስልክ: +251932683215",
+      "fallbackAddress": "🏠 አድራሻ: ሀያሁለት ከ ጐላጉል ወደ ቦሌ በሚወስደዉ መንገድ KB MALL Ground Floor",
+      "footerBrandName": "ላይት ፋሽን",
+      "footerTagline": "ውበት • ፕሪሚየም ጥራት • ዘመናዊ ስታይል",
+      "footerHeadline": "ጥራትን ለሚመርጡ ወንዶች።",
+      "footerTelegramLabel": "ቴሌግራም",
+      "footerTelegramHandle": "@lightfashions",
+      "footerTiktokLabel": "ቲክቶክ",
+      "footerTiktokHandle": "@lightfashions",
+      "relatedTitle": "እንዲሁም ሊወዱዎት ይችላሉ",
+      "addToFavorites": "ወደ ተወዳጆች ጨምር",
+      "removeFromFavorites": "ከተወዳጆች አስወግድ",
+      "shareProduct": "አጋራ"
+    }
   },
   "nav": {
     "home": "መነሻ",

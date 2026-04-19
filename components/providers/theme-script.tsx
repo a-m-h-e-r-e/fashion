@@ -16,9 +16,9 @@ const themeScript = `
 export function ThemeScript() {
   return (
     <Script
+      dangerouslySetInnerHTML={ { __html: themeScript } }
       id='theme-init'
       strategy='beforeInteractive'
-      dangerouslySetInnerHTML={ { __html: themeScript } }
     />
   )
 }

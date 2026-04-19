@@ -13,6 +13,7 @@ interface SubcategoryCardProps {
 
 export function SubcategoryCard( { subcategory, className }: SubcategoryCardProps ) {
   const t = useTranslations()
+  const subcategoryLabel = t.has( subcategory.name ) ? t( subcategory.name ) : subcategory.name
 
   return (
     <a
@@ -27,7 +28,7 @@ export function SubcategoryCard( { subcategory, className }: SubcategoryCardProp
       {/* Image container */}
       <div className='relative aspect-square w-full overflow-hidden'>
         <Image
-          alt={ t( subcategory.name ) }
+          alt={ subcategoryLabel }
           className='object-cover transition-transform duration-700 group-hover:scale-110'
           fill
           sizes='(max-width: 640px) 33vw, 25vw'
@@ -45,7 +46,7 @@ export function SubcategoryCard( { subcategory, className }: SubcategoryCardProp
         {/* Content */}
         <div className='absolute inset-x-0 bottom-0 p-3'>
           <h3 className='font-serif text-base font-semibold text-white'>
-            {t( subcategory.name )}
+            {subcategoryLabel}
           </h3>
           <p className='mt-0.5 text-sm text-white/70'>
             {subcategory.itemCount}+ items
