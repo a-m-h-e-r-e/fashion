@@ -3,6 +3,7 @@ import { render, screen, cleanup } from '@testing-library/react'
 import { NextIntlClientProvider } from 'next-intl'
 import { ProductCard } from './product-card'
 import messages from '../../messages/en.json'
+import amMessages from '../../messages/am.json'
 import type { Product } from '@/lib/types'
 
 afterEach( () => {
@@ -30,8 +31,21 @@ const mockProductNoDiscount: Product = {
   originalPrice : null,
 }
 
+const mockProductLargePrice: Product = {
+  ...mockProduct,
+  id            : 'prod-4',
+  originalPrice : 9876543,
+  price         : 12345,
+}
+
 const renderWithIntl = ( component: React.ReactNode ) => render(
   <NextIntlClientProvider locale='en' messages={ messages }>
+    {component}
+  </NextIntlClientProvider>,
+)
+
+const renderWithAmIntl = ( component: React.ReactNode ) => render(
+  <NextIntlClientProvider locale='am' messages={ amMessages }>
     {component}
   </NextIntlClientProvider>,
 )
@@ -53,6 +67,22 @@ describe( 'ProductCard', () => {
       .toBeDefined()
     expect( originalPrice.className )
       .toContain( 'line-through' )
+  } )
+
+  test( 'renders postfix Birr for amharic prices', () => {
+    renderWithAmIntl( <ProductCard product={ mockProduct } /> )
+
+    expect( screen.getByText( '2 Birr' ) )
+      .toBeDefined()
+  } )
+
+  test( 'renders comma-formatted prices', () => {
+    renderWithIntl( <ProductCard product={ mockProductLargePrice } /> )
+
+    expect( screen.getByText( '$12,345' ) )
+      .toBeDefined()
+    expect( screen.getByText( '$9,876,543' ) )
+      .toBeDefined()
   } )
 
   test( 'renders discount badge', () => {

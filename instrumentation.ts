@@ -8,21 +8,13 @@
  * @see https://nextjs.org/docs/app/building-your-application/optimizing/instrumentation
  */
 export async function register() {
-  // Allow enabling MSW explicitly via env var ENABLE_MSW=true, or via NODE_ENV
+  // Only enable MSW when explicitly requested.
   const enableMswValue = process.env.ENABLE_MSW ?? ''
   const enableMswExplicit = 'true' === String( enableMswValue )
     .toLowerCase()
-  const isDevOrTest = 'development' === process.env.NODE_ENV || 'test' === process.env.NODE_ENV
 
-  if ( !enableMswExplicit && !isDevOrTest ) {
-    // eslint-disable-next-line no-console
-    console.info(
-      '[instrumentation] register() skipping: NODE_ENV not development or test and ENABLE_MSW not set',
-      {
-        ENABLE_MSW : process.env.ENABLE_MSW,
-        NODE_ENV   : process.env.NODE_ENV,
-      },
-    )
+  if ( !enableMswExplicit ) {
+    // Keep runtime on real backend by default.
 
     return
   }

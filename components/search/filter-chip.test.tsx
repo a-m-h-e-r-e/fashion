@@ -14,8 +14,16 @@ const mockFilter: FilterConfig = {
   name    : 'searchFilters.size',
   type    : 'multi',
   options : [
-    { id: 's', label: 'S', count: 10 },
-    { id: 'm', label: 'M', count: 20 },
+    {
+      id    : 's',
+      label : 'S',
+      count : 10,
+    },
+    {
+      id    : 'm',
+      label : 'M',
+      count : 20,
+    },
   ],
 }
 
@@ -96,7 +104,8 @@ describe( 'FilterChip', () => {
 
     const buttons = screen.getAllByRole( 'button' )
 
-    expect( buttons ).toHaveLength( 2 )
+    expect( buttons )
+      .toHaveLength( 2 )
 
     fireEvent.click( buttons[1] )
 
@@ -125,7 +134,12 @@ describe( 'FilterBar', () => {
   test( 'renders all filter chips', () => {
     const filters: Array<FilterConfig> = [
       mockFilter,
-      { ...mockFilter, id: 'price', name: 'searchFilters.price', options: [] },
+      {
+        ...mockFilter,
+        id      : 'price',
+        name    : 'searchFilters.price',
+        options : [],
+      },
     ]
 
     renderWithIntl(

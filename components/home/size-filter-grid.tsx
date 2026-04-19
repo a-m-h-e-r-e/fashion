@@ -53,7 +53,7 @@ function SizeFilterCard( { size, index, className }: SizeFilterCardProps ) {
 
         {/* Item count */}
         <span className='text-sm text-white/70'>
-          {t( 'itemsCount', { count: size.count } )}
+          {t( 'itemsCount', { count: size.count ?? 0 } )}
         </span>
       </div>
 

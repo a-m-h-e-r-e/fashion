@@ -14,6 +14,7 @@ interface CategoryCardProps {
 
 export function CategoryCard( { category, className }: CategoryCardProps ) {
   const t = useTranslations()
+  const categoryLabel = t.has( category.name ) ? t( category.name ) : category.name
 
   // Format large numbers as "167k+"
   const displayCount = ( count: number ) => {
@@ -37,7 +38,7 @@ export function CategoryCard( { category, className }: CategoryCardProps ) {
       {/* Image container */}
       <div className='relative aspect-square w-full overflow-hidden bg-secondary'>
         <Image
-          alt={ t( category.name ) }
+          alt={ categoryLabel }
           className='img-zoom object-cover'
           fill
           sizes='(max-width: 640px) 33vw, (max-width: 1024px) 25vw, 20vw'
@@ -54,7 +55,7 @@ export function CategoryCard( { category, className }: CategoryCardProps ) {
         <div className='absolute inset-x-0 bottom-0 p-3'>
           {/* Category name */}
           <h3 className='font-serif text-base font-semibold text-white sm:text-lg'>
-            {t( category.name )}
+            {categoryLabel}
           </h3>
 
           {/* Item count */}

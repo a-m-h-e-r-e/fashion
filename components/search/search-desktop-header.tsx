@@ -23,13 +23,15 @@ export function SearchDesktopHeader( {
 
   useEffect( () => {
     const handleScroll = () => {
-      setIsAtTop( window.scrollY < 8 )
+      setIsAtTop( 8 > window.scrollY )
     }
 
     handleScroll()
     window.addEventListener( 'scroll', handleScroll, { passive: true } )
 
-    return () => window.removeEventListener( 'scroll', handleScroll )
+    return () => {
+      window.removeEventListener( 'scroll', handleScroll )
+    }
   }, [] )
 
   return (
@@ -79,10 +81,7 @@ export function SearchDesktopHeader( {
         <div className='relative max-w-xl flex-1'>
           <Search className='absolute start-3 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground' />
           <input
-            className={
-              'h-10 w-full rounded-xl border pe-4 ps-10 text-sm placeholder:text-muted-foreground focus:border-[hsl(var(--gold)/0.5)] focus:outline-none focus:ring-1 focus:ring-[hsl(var(--gold)/0.5)] '
-              + 'border-border bg-muted/40 text-foreground dark:border-white/10 dark:bg-white/5 dark:text-white'
-            }
+            className={ 'h-10 w-full rounded-xl border pe-4 ps-10 text-sm placeholder:text-muted-foreground focus:border-[hsl(var(--gold)/0.5)] focus:outline-none focus:ring-1 focus:ring-[hsl(var(--gold)/0.5)] ' + 'border-border bg-muted/40 text-foreground dark:border-white/10 dark:bg-white/5 dark:text-white' }
             placeholder={ `${ t( 'placeholder' ) } ${ categoryName }` }
             type='text'
           />
